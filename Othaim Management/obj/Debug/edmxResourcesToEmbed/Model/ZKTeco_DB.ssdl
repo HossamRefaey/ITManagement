@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ZKTeco_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="USERINFO">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BADGENUMBER" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="SSN" Type="varchar" MaxLength="20" />
+    <Property Name="NAME" Type="varchar" MaxLength="40" />
+    <Property Name="GENDER" Type="varchar" MaxLength="8" />
+    <Property Name="TITLE" Type="varchar" MaxLength="20" />
+    <Property Name="PAGER" Type="varchar" MaxLength="20" />
+    <Property Name="BIRTHDAY" Type="datetime" />
+    <Property Name="HIREDDAY" Type="datetime" />
+    <Property Name="STREET" Type="varchar" MaxLength="80" />
+    <Property Name="CITY" Type="varchar" MaxLength="2" />
+    <Property Name="STATE" Type="varchar" MaxLength="2" />
+    <Property Name="ZIP" Type="varchar" MaxLength="12" />
+    <Property Name="OPHONE" Type="varchar" MaxLength="20" />
+    <Property Name="FPHONE" Type="varchar" MaxLength="20" />
+    <Property Name="VERIFICATIONMETHOD" Type="smallint" />
+    <Property Name="DEFAULTDEPTID" Type="smallint" />
+    <Property Name="SECURITYFLAGS" Type="smallint" />
+    <Property Name="ATT" Type="smallint" Nullable="false" />
+    <Property Name="INLATE" Type="smallint" Nullable="false" />
+    <Property Name="OUTEARLY" Type="smallint" Nullable="false" />
+    <Property Name="OVERTIME" Type="smallint" Nullable="false" />
+    <Property Name="SEP" Type="smallint" Nullable="false" />
+    <Property Name="HOLIDAY" Type="smallint" Nullable="false" />
+    <Property Name="MINZU" Type="varchar" MaxLength="8" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="50" />
+    <Property Name="LUNCHDURATION" Type="smallint" Nullable="false" />
+    <Property Name="MVerifyPass" Type="varchar" MaxLength="10" />
+    <Property Name="PHOTO" Type="image" />
+    <Property Name="Notes" Type="image" />
+    <Property Name="privilege" Type="int" />
+    <Property Name="InheritDeptSch" Type="smallint" />
+    <Property Name="InheritDeptSchClass" Type="smallint" />
+    <Property Name="AutoSchPlan" Type="smallint" />
+    <Property Name="MinAutoSchInterval" Type="int" />
+    <Property Name="RegisterOT" Type="smallint" />
+    <Property Name="InheritDeptRule" Type="smallint" />
+    <Property Name="EMPRIVILEGE" Type="smallint" />
+    <Property Name="CardNo" Type="varchar" MaxLength="20" />
+    <Property Name="FaceGroup" Type="int" />
+    <Property Name="AccGroup" Type="int" />
+    <Property Name="UseAccGroupTZ" Type="int" />
+    <Property Name="VerifyCode" Type="int" />
+    <Property Name="Expires" Type="int" />
+    <Property Name="ValidCount" Type="int" />
+    <Property Name="ValidTimeBegin" Type="datetime" />
+    <Property Name="ValidTimeEnd" Type="datetime" />
+    <Property Name="TimeZone1" Type="int" />
+    <Property Name="TimeZone2" Type="int" />
+    <Property Name="TimeZone3" Type="int" />
+  </EntityType>
+  <EntityContainer Name="ZKTeco_DBModelStoreContainer">
+    <EntitySet Name="USERINFO" EntityType="Self.USERINFO" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

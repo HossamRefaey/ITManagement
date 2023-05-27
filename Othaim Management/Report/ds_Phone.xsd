@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_Phone" targetNamespace="http://tempuri.org/ds_Phone.xsd" xmlns:mstns="http://tempuri.org/ds_Phone.xsd" xmlns="http://tempuri.org/ds_Phone.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_Phone" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_Phone" msprop:Generator_UserDSName="ds_Phone">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="phone" msprop:Generator_TableClassName="phoneDataTable" msprop:Generator_TableVarName="tablephone" msprop:Generator_TablePropName="phone" msprop:Generator_RowDeletingName="phoneRowDeleting" msprop:Generator_RowChangingName="phoneRowChanging" msprop:Generator_RowEvHandlerName="phoneRowChangeEventHandler" msprop:Generator_RowDeletedName="phoneRowDeleted" msprop:Generator_UserTableName="phone" msprop:Generator_RowChangedName="phoneRowChanged" msprop:Generator_RowEvArgName="phoneRowChangeEvent" msprop:Generator_RowClassName="phoneRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="phone_id" msprop:Generator_ColumnVarNameInTable="columnphone_id" msprop:Generator_ColumnPropNameInRow="phone_id" msprop:Generator_ColumnPropNameInTable="phone_idColumn" msprop:Generator_UserColumnName="phone_id" type="xs:int" minOccurs="0" />
+              <xs:element name="simcard" msprop:Generator_ColumnVarNameInTable="columnsimcard" msprop:Generator_ColumnPropNameInRow="simcard" msprop:Generator_ColumnPropNameInTable="simcardColumn" msprop:Generator_UserColumnName="simcard" type="xs:string" minOccurs="0" />
+              <xs:element name="simCardSerial" msprop:Generator_ColumnVarNameInTable="columnsimCardSerial" msprop:Generator_ColumnPropNameInRow="simCardSerial" msprop:Generator_ColumnPropNameInTable="simCardSerialColumn" msprop:Generator_UserColumnName="simCardSerial" type="xs:string" minOccurs="0" />
+              <xs:element name="LandLine" msprop:Generator_ColumnVarNameInTable="columnLandLine" msprop:Generator_ColumnPropNameInRow="LandLine" msprop:Generator_ColumnPropNameInTable="LandLineColumn" msprop:Generator_UserColumnName="LandLine" type="xs:string" minOccurs="0" />
+              <xs:element name="branch_Name" msprop:Generator_ColumnVarNameInTable="columnbranch_Name" msprop:Generator_ColumnPropNameInRow="branch_Name" msprop:Generator_ColumnPropNameInTable="branch_NameColumn" msprop:Generator_UserColumnName="branch_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="note" msprop:Generator_ColumnVarNameInTable="columnnote" msprop:Generator_ColumnPropNameInRow="note" msprop:Generator_ColumnPropNameInTable="noteColumn" msprop:Generator_UserColumnName="note" type="xs:string" minOccurs="0" />
+              <xs:element name="Quota" msprop:Generator_ColumnVarNameInTable="columnQuota" msprop:Generator_ColumnPropNameInRow="Quota" msprop:Generator_ColumnPropNameInTable="QuotaColumn" msprop:Generator_UserColumnName="Quota" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

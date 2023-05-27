@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26D27BF6-301C-455E-A936-8BF106A6DD00}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Othaim_Management</RootNamespace>
+    <AssemblyName>Othaim Management</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>image002.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.Wizard, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\cls_Branch.cs" />
+    <Compile Include="Controller\cls_Category.cs" />
+    <Compile Include="Controller\cls_Contact_Branches.cs" />
+    <Compile Include="Controller\cls_DB.cs" />
+    <Compile Include="Controller\cls_Dept.cs" />
+    <Compile Include="Controller\cls_deviceCycle.cs" />
+    <Compile Include="Controller\cls_Devices.cs" />
+    <Compile Include="Controller\cls_DevModel.cs" />
+    <Compile Include="Controller\cls_DevType.cs" />
+    <Compile Include="Controller\cls_Encoding.cs" />
+    <Compile Include="Controller\cls_FeedBack.cs" />
+    <Compile Include="Controller\cls_ImageConvert.cs" />
+    <Compile Include="Controller\cls_Phone.cs" />
+    <Compile Include="Controller\cls_Status.cs" />
+    <Compile Include="Controller\cls_STK_DTL.cs" />
+    <Compile Include="Controller\cls_STK_HDR.cs" />
+    <Compile Include="Controller\cls_TonerReports.cs" />
+    <Compile Include="Controller\cls_Toners.cs" />
+    <Compile Include="Controller\cls_TransActions.cs" />
+    <Compile Include="Controller\cls_Type.cs" />
+    <Compile Include="Controller\cls_Update.cs" />
+    <Compile Include="Controller\cls_Users.cs" />
+    <Compile Include="Controller\cls_ZKTeco.cs" />
+    <Compile Include="Model\Contact_Branches.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\delete_Device_root_Result.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\device_Cycle.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Dispose_Result.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FeedBack.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\info.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OthaimIT.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OthaimIT.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OthaimIT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OthaimIT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OthaimIT.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagrams_Result.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\STK_DTL.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\STK_HDR.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sys_branch.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sys_Category.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sys_connection_type.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sys_Dept.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sys_devices.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sys_dev_model.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sys_dev_type.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sys_doc_type.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sys_phone.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sys_status.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sys_Toners.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sys_Type.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sys_Users.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TonerReports.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TransActions.cs">
+      <DependentUpon>OthaimIT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\USERINFO.cs">
+      <DependentUpon>ZKTeco_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ZKTeco_DB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZKTeco_DB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ZKTeco_DB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZKTeco_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ZKTeco_DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZKTeco_DB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\ds_Devices.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_Devices.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ds_Dispose.cs">
+      <DependentUpon>ds_Dispose.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ds_Dispose.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_Dispose.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ds_Phone.cs">
+      <DependentUpon>ds_Phone.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ds_Phone.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_Phone.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_Barcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_Barcode.Designer.cs">
+      <DependentUpon>frm_Barcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_Devices_rpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_Devices_rpt.Designer.cs">
+      <DependentUpon>frm_Devices_rpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_Dispose_rpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_Dispose_rpt.Designer.cs">
+      <DependentUpon>frm_Dispose_rpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_Phone_rpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_Phone_rpt.Designer.cs">
+      <DependentUpon>frm_Phone_rpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frm_Receipt_rpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frm_Receipt_rpt.Designer.cs">
+      <DependentUpon>frm_Receipt_rpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Views\frm_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frm_About.Designer.cs">
+      <DependentUpon>frm_About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frm_Main.Designer.cs">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frm_Permission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frm_Permission.Designer.cs">
+      <DependentUpon>frm_Permission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frm_ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frm_ResetPassword.Designer.cs">
+      <DependentUpon>frm_ResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Update.Designer.cs">
+      <DependentUpon>Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Branch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Branch.Designer.cs">
+      <DependentUpon>usr_Branch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Category.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Category.Designer.cs">
+      <DependentUpon>usr_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Contact_Branches.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Contact_Branches.Designer.cs">
+      <DependentUpon>usr_Contact_Branches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Department.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Department.Designer.cs">
+      <DependentUpon>usr_Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_DeviceCycle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_DeviceCycle.Designer.cs">
+      <DependentUpon>usr_DeviceCycle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_DeviceOps.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_DeviceOps.Designer.cs">
+      <DependentUpon>usr_DeviceOps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_DeviceReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_DeviceReport.Designer.cs">
+      <DependentUpon>usr_DeviceReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Devices.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Devices.Designer.cs">
+      <DependentUpon>usr_Devices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Device_Model.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Device_Model.Designer.cs">
+      <DependentUpon>usr_Device_Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Device_Type.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Device_Type.Designer.cs">
+      <DependentUpon>usr_Device_Type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Dispose.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Dispose.Designer.cs">
+      <DependentUpon>usr_Dispose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_FeedBack.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_FeedBack.Designer.cs">
+      <DependentUpon>usr_FeedBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_FeedBackReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_FeedBackReport.Designer.cs">
+      <DependentUpon>usr_FeedBackReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Home.Designer.cs">
+      <DependentUpon>usr_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Permission.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Permission.Designer.cs">
+      <DependentUpon>usr_Permission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Phone.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Phone.Designer.cs">
+      <DependentUpon>usr_Phone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Receipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Receipt.Designer.cs">
+      <DependentUpon>usr_Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_TonerReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_TonerReports.Designer.cs">
+      <DependentUpon>usr_TonerReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Toners.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Toners.Designer.cs">
+      <DependentUpon>usr_Toners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Users.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Users.Designer.cs">
+      <DependentUpon>usr_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Status.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Status.Designer.cs">
+      <DependentUpon>usr_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usr_Type.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\usr_Type.Designer.cs">
+      <DependentUpon>usr_Type.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report\frm_Barcode.resx">
+      <DependentUpon>frm_Barcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_Devices_rpt.resx">
+      <DependentUpon>frm_Devices_rpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_Dispose_rpt.resx">
+      <DependentUpon>frm_Dispose_rpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_Phone_rpt.resx">
+      <DependentUpon>frm_Phone_rpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frm_Receipt_rpt.resx">
+      <DependentUpon>frm_Receipt_rpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rpt_Devices.rdlc" />
+    <EmbeddedResource Include="Report\rpt_Dispose.rdlc" />
+    <EmbeddedResource Include="Report\rpt_Phone.rdlc" />
+    <EmbeddedResource Include="Report\rpt_Receipt.rdlc" />
+    <EmbeddedResource Include="Views\frm_About.resx">
+      <DependentUpon>frm_About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frm_Main.resx">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frm_Permission.resx">
+      <DependentUpon>frm_Permission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frm_ResetPassword.resx">
+      <DependentUpon>frm_ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Update.resx">
+      <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Branch.resx">
+      <DependentUpon>usr_Branch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Category.resx">
+      <DependentUpon>usr_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Contact_Branches.resx">
+      <DependentUpon>usr_Contact_Branches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Department.resx">
+      <DependentUpon>usr_Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_DeviceCycle.resx">
+      <DependentUpon>usr_DeviceCycle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_DeviceOps.resx">
+      <DependentUpon>usr_DeviceOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_DeviceReport.resx">
+      <DependentUpon>usr_DeviceReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Devices.resx">
+      <DependentUpon>usr_Devices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Device_Model.resx">
+      <DependentUpon>usr_Device_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Device_Type.resx">
+      <DependentUpon>usr_Device_Type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Dispose.resx">
+      <DependentUpon>usr_Dispose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_FeedBack.resx">
+      <DependentUpon>usr_FeedBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_FeedBackReport.resx">
+      <DependentUpon>usr_FeedBackReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Home.resx">
+      <DependentUpon>usr_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Permission.resx">
+      <DependentUpon>usr_Permission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Phone.resx">
+      <DependentUpon>usr_Phone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Receipt.resx">
+      <DependentUpon>usr_Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_TonerReports.resx">
+      <DependentUpon>usr_TonerReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Toners.resx">
+      <DependentUpon>usr_Toners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Users.resx">
+      <DependentUpon>usr_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Status.resx">
+      <DependentUpon>usr_Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usr_Type.resx">
+      <DependentUpon>usr_Type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\ZKTeco_DB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ZKTeco_DB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Model\OthaimIT.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OthaimIT.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\OthaimIT.edmx.diagram">
+      <DependentUpon>OthaimIT.edmx</DependentUpon>
+    </None>
+    <None Include="Model\ZKTeco_DB.edmx.diagram">
+      <DependentUpon>ZKTeco_DB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Report\ds_Devices.xsc">
+      <DependentUpon>ds_Devices.xsd</DependentUpon>
+    </None>
+    <None Include="Report\ds_Devices.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_Devices.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\ds_Devices.xss">
+      <DependentUpon>ds_Devices.xsd</DependentUpon>
+    </None>
+    <None Include="Report\ds_Dispose.xsc">
+      <DependentUpon>ds_Dispose.xsd</DependentUpon>
+    </None>
+    <None Include="Report\ds_Dispose.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_Dispose.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\ds_Dispose.xss">
+      <DependentUpon>ds_Dispose.xsd</DependentUpon>
+    </None>
+    <None Include="Report\ds_Phone.xsc">
+      <DependentUpon>ds_Phone.xsd</DependentUpon>
+    </None>
+    <None Include="Report\ds_Phone.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_Phone.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\ds_Phone.xss">
+      <DependentUpon>ds_Phone.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\hide.png" />
+    <None Include="Resources\view.png" />
+    <None Include="bin\Debug\Picture1.png" />
+    <None Include="bin\Debug\image002.ico" />
+    <Content Include="image002.ico" />
+    <Content Include="Model\OthaimIT.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OthaimIT.edmx</DependentUpon>
+      <LastGenOutput>OthaimIT.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\OthaimIT.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OthaimIT.edmx</DependentUpon>
+      <LastGenOutput>OthaimIT.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\ZKTeco_DB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ZKTeco_DB.edmx</DependentUpon>
+      <LastGenOutput>ZKTeco_DB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\ZKTeco_DB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ZKTeco_DB.edmx</DependentUpon>
+      <LastGenOutput>ZKTeco_DB.cs</LastGenOutput>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

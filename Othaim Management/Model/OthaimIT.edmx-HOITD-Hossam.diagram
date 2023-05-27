@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3a93d6d926754b6793feeb9a37ac2836" Name="Diagram1">
+        <EntityTypeShape EntityType="OthaimITModel.device_Cycle" Width="1.5" PointX="9.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.STK_DTL" Width="1.5" PointX="12.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.STK_HDR" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.sys_branch" Width="1.5" PointX="5.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.sys_Category" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.sys_connection_type" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.sys_Dept" Width="1.5" PointX="5.25" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.sys_dev_model" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.sys_dev_type" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.sys_devices" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.sys_doc_type" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.sys_status" Width="1.5" PointX="5.25" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.sys_Type" Width="1.5" PointX="5.25" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.sys_Users" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="OthaimITModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="OthaimITModel.FK_device_Cycle_STK_HDR" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_device_Cycle_sys_devices" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_device_Cycle_sys_doc_type" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_STK_DTL_STK_HDR" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_STK_DTL_sys_devices" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_STK_HDR_sys_doc_type" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_sys_branch_sys_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_sys_Dept_sys_branch" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_sys_devices_sys_branch" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_sys_dev_model_sys_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_sys_dev_type_sys_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_sys_devices_sys_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_sys_devices_sys_Dept" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_sys_dev_model_sys_dev_type" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_sys_devices_sys_Devices_Model" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_sys_devices_sys_dev_type" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_sys_devices_sys_status" ManuallyRouted="false" />
+        <AssociationConnector Association="OthaimITModel.FK_sys_devices_sys_Type" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ZKTeco_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="USERINFO">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BADGENUMBER" Type="varchar" MaxLength="24" Nullable="false" />
+          <Property Name="SSN" Type="varchar" MaxLength="20" />
+          <Property Name="NAME" Type="varchar" MaxLength="40" />
+          <Property Name="GENDER" Type="varchar" MaxLength="8" />
+          <Property Name="TITLE" Type="varchar" MaxLength="20" />
+          <Property Name="PAGER" Type="varchar" MaxLength="20" />
+          <Property Name="BIRTHDAY" Type="datetime" />
+          <Property Name="HIREDDAY" Type="datetime" />
+          <Property Name="STREET" Type="varchar" MaxLength="80" />
+          <Property Name="CITY" Type="varchar" MaxLength="2" />
+          <Property Name="STATE" Type="varchar" MaxLength="2" />
+          <Property Name="ZIP" Type="varchar" MaxLength="12" />
+          <Property Name="OPHONE" Type="varchar" MaxLength="20" />
+          <Property Name="FPHONE" Type="varchar" MaxLength="20" />
+          <Property Name="VERIFICATIONMETHOD" Type="smallint" />
+          <Property Name="DEFAULTDEPTID" Type="smallint" />
+          <Property Name="SECURITYFLAGS" Type="smallint" />
+          <Property Name="ATT" Type="smallint" Nullable="false" />
+          <Property Name="INLATE" Type="smallint" Nullable="false" />
+          <Property Name="OUTEARLY" Type="smallint" Nullable="false" />
+          <Property Name="OVERTIME" Type="smallint" Nullable="false" />
+          <Property Name="SEP" Type="smallint" Nullable="false" />
+          <Property Name="HOLIDAY" Type="smallint" Nullable="false" />
+          <Property Name="MINZU" Type="varchar" MaxLength="8" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" />
+          <Property Name="LUNCHDURATION" Type="smallint" Nullable="false" />
+          <Property Name="MVerifyPass" Type="varchar" MaxLength="10" />
+          <Property Name="PHOTO" Type="image" />
+          <Property Name="Notes" Type="image" />
+          <Property Name="privilege" Type="int" />
+          <Property Name="InheritDeptSch" Type="smallint" />
+          <Property Name="InheritDeptSchClass" Type="smallint" />
+          <Property Name="AutoSchPlan" Type="smallint" />
+          <Property Name="MinAutoSchInterval" Type="int" />
+          <Property Name="RegisterOT" Type="smallint" />
+          <Property Name="InheritDeptRule" Type="smallint" />
+          <Property Name="EMPRIVILEGE" Type="smallint" />
+          <Property Name="CardNo" Type="varchar" MaxLength="20" />
+          <Property Name="FaceGroup" Type="int" />
+          <Property Name="AccGroup" Type="int" />
+          <Property Name="UseAccGroupTZ" Type="int" />
+          <Property Name="VerifyCode" Type="int" />
+          <Property Name="Expires" Type="int" />
+          <Property Name="ValidCount" Type="int" />
+          <Property Name="ValidTimeBegin" Type="datetime" />
+          <Property Name="ValidTimeEnd" Type="datetime" />
+          <Property Name="TimeZone1" Type="int" />
+          <Property Name="TimeZone2" Type="int" />
+          <Property Name="TimeZone3" Type="int" />
+        </EntityType>
+        <EntityContainer Name="ZKTeco_DBModelStoreContainer">
+          <EntitySet Name="USERINFO" EntityType="Self.USERINFO" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ZKTeco_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="USERINFO">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BADGENUMBER" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SSN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="GENDER" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="TITLE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PAGER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BIRTHDAY" Type="DateTime" Precision="3" />
+          <Property Name="HIREDDAY" Type="DateTime" Precision="3" />
+          <Property Name="STREET" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="CITY" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="STATE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ZIP" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="OPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VERIFICATIONMETHOD" Type="Int16" />
+          <Property Name="DEFAULTDEPTID" Type="Int16" />
+          <Property Name="SECURITYFLAGS" Type="Int16" />
+          <Property Name="ATT" Type="Int16" Nullable="false" />
+          <Property Name="INLATE" Type="Int16" Nullable="false" />
+          <Property Name="OUTEARLY" Type="Int16" Nullable="false" />
+          <Property Name="OVERTIME" Type="Int16" Nullable="false" />
+          <Property Name="SEP" Type="Int16" Nullable="false" />
+          <Property Name="HOLIDAY" Type="Int16" Nullable="false" />
+          <Property Name="MINZU" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LUNCHDURATION" Type="Int16" Nullable="false" />
+          <Property Name="MVerifyPass" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Notes" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="privilege" Type="Int32" />
+          <Property Name="InheritDeptSch" Type="Int16" />
+          <Property Name="InheritDeptSchClass" Type="Int16" />
+          <Property Name="AutoSchPlan" Type="Int16" />
+          <Property Name="MinAutoSchInterval" Type="Int32" />
+          <Property Name="RegisterOT" Type="Int16" />
+          <Property Name="InheritDeptRule" Type="Int16" />
+          <Property Name="EMPRIVILEGE" Type="Int16" />
+          <Property Name="CardNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FaceGroup" Type="Int32" />
+          <Property Name="AccGroup" Type="Int32" />
+          <Property Name="UseAccGroupTZ" Type="Int32" />
+          <Property Name="VerifyCode" Type="Int32" />
+          <Property Name="Expires" Type="Int32" />
+          <Property Name="ValidCount" Type="Int32" />
+          <Property Name="ValidTimeBegin" Type="DateTime" Precision="3" />
+          <Property Name="ValidTimeEnd" Type="DateTime" Precision="3" />
+          <Property Name="TimeZone1" Type="Int32" />
+          <Property Name="TimeZone2" Type="Int32" />
+          <Property Name="TimeZone3" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="ZKTeco_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="USERINFO" EntityType="Self.USERINFO" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ZKTeco_DBModelStoreContainer" CdmEntityContainer="ZKTeco_DBEntities">
+          <EntitySetMapping Name="USERINFO">
+            <EntityTypeMapping TypeName="ZKTeco_DBModel.USERINFO">
+              <MappingFragment StoreEntitySet="USERINFO">
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="BADGENUMBER" ColumnName="BADGENUMBER" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="PAGER" ColumnName="PAGER" />
+                <ScalarProperty Name="BIRTHDAY" ColumnName="BIRTHDAY" />
+                <ScalarProperty Name="HIREDDAY" ColumnName="HIREDDAY" />
+                <ScalarProperty Name="STREET" ColumnName="STREET" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="OPHONE" ColumnName="OPHONE" />
+                <ScalarProperty Name="FPHONE" ColumnName="FPHONE" />
+                <ScalarProperty Name="VERIFICATIONMETHOD" ColumnName="VERIFICATIONMETHOD" />
+                <ScalarProperty Name="DEFAULTDEPTID" ColumnName="DEFAULTDEPTID" />
+                <ScalarProperty Name="SECURITYFLAGS" ColumnName="SECURITYFLAGS" />
+                <ScalarProperty Name="ATT" ColumnName="ATT" />
+                <ScalarProperty Name="INLATE" ColumnName="INLATE" />
+                <ScalarProperty Name="OUTEARLY" ColumnName="OUTEARLY" />
+                <ScalarProperty Name="OVERTIME" ColumnName="OVERTIME" />
+                <ScalarProperty Name="SEP" ColumnName="SEP" />
+                <ScalarProperty Name="HOLIDAY" ColumnName="HOLIDAY" />
+                <ScalarProperty Name="MINZU" ColumnName="MINZU" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="LUNCHDURATION" ColumnName="LUNCHDURATION" />
+                <ScalarProperty Name="MVerifyPass" ColumnName="MVerifyPass" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="privilege" ColumnName="privilege" />
+                <ScalarProperty Name="InheritDeptSch" ColumnName="InheritDeptSch" />
+                <ScalarProperty Name="InheritDeptSchClass" ColumnName="InheritDeptSchClass" />
+                <ScalarProperty Name="AutoSchPlan" ColumnName="AutoSchPlan" />
+                <ScalarProperty Name="MinAutoSchInterval" ColumnName="MinAutoSchInterval" />
+                <ScalarProperty Name="RegisterOT" ColumnName="RegisterOT" />
+                <ScalarProperty Name="InheritDeptRule" ColumnName="InheritDeptRule" />
+                <ScalarProperty Name="EMPRIVILEGE" ColumnName="EMPRIVILEGE" />
+                <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+                <ScalarProperty Name="FaceGroup" ColumnName="FaceGroup" />
+                <ScalarProperty Name="AccGroup" ColumnName="AccGroup" />
+                <ScalarProperty Name="UseAccGroupTZ" ColumnName="UseAccGroupTZ" />
+                <ScalarProperty Name="VerifyCode" ColumnName="VerifyCode" />
+                <ScalarProperty Name="Expires" ColumnName="Expires" />
+                <ScalarProperty Name="ValidCount" ColumnName="ValidCount" />
+                <ScalarProperty Name="ValidTimeBegin" ColumnName="ValidTimeBegin" />
+                <ScalarProperty Name="ValidTimeEnd" ColumnName="ValidTimeEnd" />
+                <ScalarProperty Name="TimeZone1" ColumnName="TimeZone1" />
+                <ScalarProperty Name="TimeZone2" ColumnName="TimeZone2" />
+                <ScalarProperty Name="TimeZone3" ColumnName="TimeZone3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

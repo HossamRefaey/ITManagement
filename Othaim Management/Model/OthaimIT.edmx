@@ -1,0 +1,2015 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OthaimITModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Contact_Branches">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="branch_id" Type="int" />
+          <Property Name="Emp_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Job" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone_Num" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="device_Cycle">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="device_id" Type="int" />
+          <Property Name="dev_SN" Type="nvarchar" MaxLength="50" />
+          <Property Name="HDR_ID" Type="int" />
+          <Property Name="DocType_ID" Type="int" />
+          <Property Name="To_SIte" Type="nvarchar" MaxLength="50" />
+          <Property Name="date" Type="date" />
+        </EntityType>
+        <EntityType Name="FeedBack">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PageName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Issus" Type="nvarchar" MaxLength="150" />
+          <Property Name="img" Type="image" />
+          <Property Name="user_Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="app_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ver" Type="nvarchar" MaxLength="50" />
+          <Property Name="ver_date" Type="date" />
+          <Property Name="update_path" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="STK_DTL">
+          <Key>
+            <PropertyRef Name="DTL_ID" />
+          </Key>
+          <Property Name="DTL_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HDR_ID" Type="int" Nullable="false" />
+          <Property Name="Device_id" Type="int" />
+          <Property Name="model_Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="item_Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="device_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="device_SN" Type="nvarchar" MaxLength="100" />
+          <Property Name="note" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="STK_HDR">
+          <Key>
+            <PropertyRef Name="HDR_ID" />
+          </Key>
+          <Property Name="HDR_ID" Type="int" Nullable="false" />
+          <Property Name="from_Site_Num" Type="nvarchar" MaxLength="50" />
+          <Property Name="from_Site_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="to_Site_Num" Type="nvarchar" MaxLength="50" />
+          <Property Name="to_Site_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="doc_type_id" Type="int" />
+          <Property Name="userName" Type="nvarchar" MaxLength="50" />
+          <Property Name="userCode" Type="int" />
+          <Property Name="Emp_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Code" Type="int" />
+          <Property Name="date" Type="date" />
+          <Property Name="note" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="sys_branch">
+          <Key>
+            <PropertyRef Name="branch_id" />
+          </Key>
+          <Property Name="branch_id" Type="int" Nullable="false" />
+          <Property Name="shrt_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_id" Type="int" />
+          <Property Name="Main_Store" Type="bit" />
+        </EntityType>
+        <EntityType Name="sys_Category">
+          <Key>
+            <PropertyRef Name="category_ID" />
+          </Key>
+          <Property Name="category_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="shrt_id" Type="nvarchar" MaxLength="10" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sys_connection_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sys_Dept">
+          <Key>
+            <PropertyRef Name="dept_id" />
+          </Key>
+          <Property Name="dept_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="branch_id" Type="int" />
+        </EntityType>
+        <EntityType Name="sys_dev_model">
+          <Key>
+            <PropertyRef Name="model_id" />
+          </Key>
+          <Property Name="model_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Item_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="devType_ID" Type="int" />
+          <Property Name="category_ID" Type="int" />
+          <Property Name="type_id" Type="int" />
+        </EntityType>
+        <EntityType Name="sys_dev_type">
+          <Key>
+            <PropertyRef Name="devType_ID" />
+          </Key>
+          <Property Name="devType_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dev_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Category_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="sys_devices">
+          <Key>
+            <PropertyRef Name="Device_id" />
+          </Key>
+          <Property Name="Device_id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="SN" Type="nvarchar" MaxLength="50" />
+          <Property Name="model_id" Type="int" />
+          <Property Name="dev_Type_id" Type="int" />
+          <Property Name="category_ID" Type="int" />
+          <Property Name="branch_id" Type="int" />
+          <Property Name="rec_date" Type="date" />
+          <Property Name="opr_date" Type="date" />
+          <Property Name="type_id" Type="int" />
+          <Property Name="status_id" Type="int" />
+          <Property Name="dept_id" Type="int" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="sys_doc_type">
+          <Key>
+            <PropertyRef Name="doc_type_id" />
+          </Key>
+          <Property Name="doc_type_id" Type="int" Nullable="false" />
+          <Property Name="doc_type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sys_phone">
+          <Key>
+            <PropertyRef Name="phone_id" />
+          </Key>
+          <Property Name="phone_id" Type="int" Nullable="false" />
+          <Property Name="simcard" Type="nvarchar" MaxLength="50" />
+          <Property Name="simCardSerial" Type="nvarchar" MaxLength="50" />
+          <Property Name="LandLine" Type="nvarchar" MaxLength="50" />
+          <Property Name="branch_id" Type="int" />
+          <Property Name="note" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quota" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sys_status">
+          <Key>
+            <PropertyRef Name="status_id" />
+          </Key>
+          <Property Name="status_id" Type="int" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sys_Toners">
+          <Key>
+            <PropertyRef Name="Toner_ID" />
+          </Key>
+          <Property Name="Toner_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Toner_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Print_Avarage" Type="int" />
+        </EntityType>
+        <EntityType Name="sys_Type">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sys_Users">
+          <Key>
+            <PropertyRef Name="User_id" />
+          </Key>
+          <Property Name="User_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="JobCode" Type="int" />
+          <Property Name="mustPassChange" Type="bit" />
+          <Property Name="accountDisabled" Type="bit" />
+          <Property Name="brWin" Type="bit" />
+          <Property Name="brNewbtn" Type="bit" />
+          <Property Name="brEditbtn" Type="bit" />
+          <Property Name="brDeletebtn" Type="bit" />
+          <Property Name="deptWin" Type="bit" />
+          <Property Name="deptNewbtn" Type="bit" />
+          <Property Name="deptEditbtn" Type="bit" />
+          <Property Name="deptDeletebtn" Type="bit" />
+          <Property Name="usrWin" Type="bit" />
+          <Property Name="usrNewbtn" Type="bit" />
+          <Property Name="usrEditbtn" Type="bit" />
+          <Property Name="usrDeletebtn" Type="bit" />
+          <Property Name="catWin" Type="bit" />
+          <Property Name="catNewbtn" Type="bit" />
+          <Property Name="catEditbtn" Type="bit" />
+          <Property Name="catDeletebtn" Type="bit" />
+          <Property Name="devTypeWin" Type="bit" />
+          <Property Name="devTypeNewbtn" Type="bit" />
+          <Property Name="devTypeEditbtn" Type="bit" />
+          <Property Name="devTypeDeletebtn" Type="bit" />
+          <Property Name="mdlWin" Type="bit" />
+          <Property Name="mdlNewbtn" Type="bit" />
+          <Property Name="mdlEditbtn" Type="bit" />
+          <Property Name="mdlDeletebtn" Type="bit" />
+          <Property Name="typeWin" Type="bit" />
+          <Property Name="typeNewbtn" Type="bit" />
+          <Property Name="typeEditbtn" Type="bit" />
+          <Property Name="typeDeletebtn" Type="bit" />
+          <Property Name="statWin" Type="bit" />
+          <Property Name="statNewbtn" Type="bit" />
+          <Property Name="statEditbtn" Type="bit" />
+          <Property Name="statDeletebtn" Type="bit" />
+          <Property Name="devWin" Type="bit" />
+          <Property Name="devNewbtn" Type="bit" />
+          <Property Name="devEditbtn" Type="bit" />
+          <Property Name="devDeletebtn" Type="bit" />
+          <Property Name="transoutWin" Type="bit" />
+          <Property Name="transInWin" Type="bit" />
+          <Property Name="transReportWin" Type="bit" />
+          <Property Name="transReportDeletebtn" Type="bit" />
+          <Property Name="stock" Type="bit" />
+          <Property Name="feedBackMgr" Type="bit" />
+          <Property Name="Authority" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneWin" Type="bit" />
+          <Property Name="phoneNewbtn" Type="bit" />
+          <Property Name="phoneEditbtn" Type="bit" />
+          <Property Name="phoneDeletebtn" Type="bit" />
+          <Property Name="TonerWin" Type="bit" />
+          <Property Name="TonerReportWin" Type="bit" />
+          <Property Name="DevCycleReportWin" Type="bit" />
+          <Property Name="DevReportWin" Type="bit" />
+          <Property Name="MaintenanceWin" Type="bit" />
+          <Property Name="DepreciationWin" Type="bit" />
+          <Property Name="LoginCount" Type="int" />
+          <Property Name="ContactBranchesWin" Type="bit" />
+          <Property Name="Thechnical" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TonerReports">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Branch_ID" Type="int" />
+          <Property Name="Toner_ID" Type="int" />
+          <Property Name="User_ID" Type="int" />
+          <Property Name="PrintCount" Type="int" />
+          <Property Name="First_Date" Type="date" />
+          <Property Name="Last_Date" Type="date" />
+          <Property Name="Order_Date" Type="datetime" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TransActions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IP_PC" Type="nvarchar" MaxLength="200" />
+          <Property Name="user_name_PC" Type="nvarchar" MaxLength="50" />
+          <Property Name="host_name-PC" Type="nvarchar" MaxLength="50" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="User_ID" Type="int" />
+        </EntityType>
+        <Association Name="FK_Contact_Branches_sys_branch">
+          <End Role="sys_branch" Type="Self.sys_branch" Multiplicity="0..1" />
+          <End Role="Contact_Branches" Type="Self.Contact_Branches" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_branch">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Contact_Branches">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_device_Cycle_STK_HDR">
+          <End Role="STK_HDR" Type="Self.STK_HDR" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="device_Cycle" Type="Self.device_Cycle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STK_HDR">
+              <PropertyRef Name="HDR_ID" />
+            </Principal>
+            <Dependent Role="device_Cycle">
+              <PropertyRef Name="HDR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_device_Cycle_sys_devices">
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="device_Cycle" Type="Self.device_Cycle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_devices">
+              <PropertyRef Name="Device_id" />
+            </Principal>
+            <Dependent Role="device_Cycle">
+              <PropertyRef Name="device_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_device_Cycle_sys_doc_type">
+          <End Role="sys_doc_type" Type="Self.sys_doc_type" Multiplicity="0..1" />
+          <End Role="device_Cycle" Type="Self.device_Cycle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_doc_type">
+              <PropertyRef Name="doc_type_id" />
+            </Principal>
+            <Dependent Role="device_Cycle">
+              <PropertyRef Name="DocType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STK_DTL_STK_HDR">
+          <End Role="STK_HDR" Type="Self.STK_HDR" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="STK_DTL" Type="Self.STK_DTL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STK_HDR">
+              <PropertyRef Name="HDR_ID" />
+            </Principal>
+            <Dependent Role="STK_DTL">
+              <PropertyRef Name="HDR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STK_DTL_sys_devices">
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="0..1" />
+          <End Role="STK_DTL" Type="Self.STK_DTL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_devices">
+              <PropertyRef Name="Device_id" />
+            </Principal>
+            <Dependent Role="STK_DTL">
+              <PropertyRef Name="Device_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STK_HDR_sys_doc_type">
+          <End Role="sys_doc_type" Type="Self.sys_doc_type" Multiplicity="0..1" />
+          <End Role="STK_HDR" Type="Self.STK_HDR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_doc_type">
+              <PropertyRef Name="doc_type_id" />
+            </Principal>
+            <Dependent Role="STK_HDR">
+              <PropertyRef Name="doc_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_branch_sys_Users1">
+          <End Role="sys_Users" Type="Self.sys_Users" Multiplicity="0..1" />
+          <End Role="sys_branch" Type="Self.sys_branch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Users">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="sys_branch">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_Dept_sys_branch">
+          <End Role="sys_branch" Type="Self.sys_branch" Multiplicity="0..1" />
+          <End Role="sys_Dept" Type="Self.sys_Dept" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_branch">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="sys_Dept">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_dev_model_sys_Category">
+          <End Role="sys_Category" Type="Self.sys_Category" Multiplicity="0..1" />
+          <End Role="sys_dev_model" Type="Self.sys_dev_model" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Category">
+              <PropertyRef Name="category_ID" />
+            </Principal>
+            <Dependent Role="sys_dev_model">
+              <PropertyRef Name="category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_dev_model_sys_dev_type">
+          <End Role="sys_dev_type" Type="Self.sys_dev_type" Multiplicity="0..1" />
+          <End Role="sys_dev_model" Type="Self.sys_dev_model" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_dev_type">
+              <PropertyRef Name="devType_ID" />
+            </Principal>
+            <Dependent Role="sys_dev_model">
+              <PropertyRef Name="devType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_dev_model_sys_Type">
+          <End Role="sys_Type" Type="Self.sys_Type" Multiplicity="0..1" />
+          <End Role="sys_dev_model" Type="Self.sys_dev_model" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Type">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="sys_dev_model">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_dev_type_sys_Category">
+          <End Role="sys_Category" Type="Self.sys_Category" Multiplicity="0..1" />
+          <End Role="sys_dev_type" Type="Self.sys_dev_type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Category">
+              <PropertyRef Name="category_ID" />
+            </Principal>
+            <Dependent Role="sys_dev_type">
+              <PropertyRef Name="Category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_branch">
+          <End Role="sys_branch" Type="Self.sys_branch" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_branch">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_Category">
+          <End Role="sys_Category" Type="Self.sys_Category" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Category">
+              <PropertyRef Name="category_ID" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_Dept">
+          <End Role="sys_Dept" Type="Self.sys_Dept" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Dept">
+              <PropertyRef Name="dept_id" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="dept_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_dev_type">
+          <End Role="sys_dev_type" Type="Self.sys_dev_type" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_dev_type">
+              <PropertyRef Name="devType_ID" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="dev_Type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_Devices_Model">
+          <End Role="sys_dev_model" Type="Self.sys_dev_model" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_dev_model">
+              <PropertyRef Name="model_id" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="model_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_status">
+          <End Role="sys_status" Type="Self.sys_status" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_status">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_Type">
+          <End Role="sys_Type" Type="Self.sys_Type" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Type">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_phone_sys_branch">
+          <End Role="sys_branch" Type="Self.sys_branch" Multiplicity="0..1" />
+          <End Role="sys_phone" Type="Self.sys_phone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_branch">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="sys_phone">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TonerReports_sys_branch">
+          <End Role="sys_branch" Type="Self.sys_branch" Multiplicity="0..1" />
+          <End Role="TonerReports" Type="Self.TonerReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_branch">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="TonerReports">
+              <PropertyRef Name="Branch_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TonerReports_sys_Toners">
+          <End Role="sys_Toners" Type="Self.sys_Toners" Multiplicity="0..1" />
+          <End Role="TonerReports" Type="Self.TonerReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Toners">
+              <PropertyRef Name="Toner_ID" />
+            </Principal>
+            <Dependent Role="TonerReports">
+              <PropertyRef Name="Toner_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TonerReports_sys_Users">
+          <End Role="sys_Users" Type="Self.sys_Users" Multiplicity="0..1" />
+          <End Role="TonerReports" Type="Self.TonerReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Users">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="TonerReports">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransActinos_sys_Users">
+          <End Role="sys_Users" Type="Self.sys_Users" Multiplicity="0..1" />
+          <End Role="TransActions" Type="Self.TransActions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Users">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="TransActions">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="delete_Device_root" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Dispose" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="OthaimITModelStoreContainer">
+          <EntitySet Name="Contact_Branches" EntityType="Self.Contact_Branches" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="device_Cycle" EntityType="Self.device_Cycle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FeedBack" EntityType="Self.FeedBack" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="info" EntityType="Self.info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STK_DTL" EntityType="Self.STK_DTL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STK_HDR" EntityType="Self.STK_HDR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sys_branch" EntityType="Self.sys_branch" Schema="dbo" Table="sys.branch" store:Type="Tables" />
+          <EntitySet Name="sys_Category" EntityType="Self.sys_Category" Schema="dbo" Table="sys.Category" store:Type="Tables" />
+          <EntitySet Name="sys_connection_type" EntityType="Self.sys_connection_type" Schema="dbo" Table="sys.connection_type" store:Type="Tables" />
+          <EntitySet Name="sys_Dept" EntityType="Self.sys_Dept" Schema="dbo" Table="sys.Dept" store:Type="Tables" />
+          <EntitySet Name="sys_dev_model" EntityType="Self.sys_dev_model" Schema="dbo" Table="sys.dev_model" store:Type="Tables" />
+          <EntitySet Name="sys_dev_type" EntityType="Self.sys_dev_type" Schema="dbo" Table="sys.dev_type" store:Type="Tables" />
+          <EntitySet Name="sys_devices" EntityType="Self.sys_devices" Schema="dbo" Table="sys.devices" store:Type="Tables" />
+          <EntitySet Name="sys_doc_type" EntityType="Self.sys_doc_type" Schema="dbo" Table="sys.doc_type" store:Type="Tables" />
+          <EntitySet Name="sys_phone" EntityType="Self.sys_phone" Schema="dbo" Table="sys.phone" store:Type="Tables" />
+          <EntitySet Name="sys_status" EntityType="Self.sys_status" Schema="dbo" Table="sys.status" store:Type="Tables" />
+          <EntitySet Name="sys_Toners" EntityType="Self.sys_Toners" Schema="dbo" Table="sys.Toners" store:Type="Tables" />
+          <EntitySet Name="sys_Type" EntityType="Self.sys_Type" Schema="dbo" Table="sys.Type" store:Type="Tables" />
+          <EntitySet Name="sys_Users" EntityType="Self.sys_Users" Schema="dbo" Table="sys.Users" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TonerReports" EntityType="Self.TonerReports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransActions" EntityType="Self.TransActions" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Contact_Branches_sys_branch" Association="Self.FK_Contact_Branches_sys_branch">
+            <End Role="sys_branch" EntitySet="sys_branch" />
+            <End Role="Contact_Branches" EntitySet="Contact_Branches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_device_Cycle_STK_HDR" Association="Self.FK_device_Cycle_STK_HDR">
+            <End Role="STK_HDR" EntitySet="STK_HDR" />
+            <End Role="device_Cycle" EntitySet="device_Cycle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_device_Cycle_sys_devices" Association="Self.FK_device_Cycle_sys_devices">
+            <End Role="sys_devices" EntitySet="sys_devices" />
+            <End Role="device_Cycle" EntitySet="device_Cycle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_device_Cycle_sys_doc_type" Association="Self.FK_device_Cycle_sys_doc_type">
+            <End Role="sys_doc_type" EntitySet="sys_doc_type" />
+            <End Role="device_Cycle" EntitySet="device_Cycle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STK_DTL_STK_HDR" Association="Self.FK_STK_DTL_STK_HDR">
+            <End Role="STK_HDR" EntitySet="STK_HDR" />
+            <End Role="STK_DTL" EntitySet="STK_DTL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STK_DTL_sys_devices" Association="Self.FK_STK_DTL_sys_devices">
+            <End Role="sys_devices" EntitySet="sys_devices" />
+            <End Role="STK_DTL" EntitySet="STK_DTL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STK_HDR_sys_doc_type" Association="Self.FK_STK_HDR_sys_doc_type">
+            <End Role="sys_doc_type" EntitySet="sys_doc_type" />
+            <End Role="STK_HDR" EntitySet="STK_HDR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_branch_sys_Users1" Association="Self.FK_sys_branch_sys_Users1">
+            <End Role="sys_Users" EntitySet="sys_Users" />
+            <End Role="sys_branch" EntitySet="sys_branch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_Dept_sys_branch" Association="Self.FK_sys_Dept_sys_branch">
+            <End Role="sys_branch" EntitySet="sys_branch" />
+            <End Role="sys_Dept" EntitySet="sys_Dept" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_dev_model_sys_Category" Association="Self.FK_sys_dev_model_sys_Category">
+            <End Role="sys_Category" EntitySet="sys_Category" />
+            <End Role="sys_dev_model" EntitySet="sys_dev_model" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_dev_model_sys_dev_type" Association="Self.FK_sys_dev_model_sys_dev_type">
+            <End Role="sys_dev_type" EntitySet="sys_dev_type" />
+            <End Role="sys_dev_model" EntitySet="sys_dev_model" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_dev_model_sys_Type" Association="Self.FK_sys_dev_model_sys_Type">
+            <End Role="sys_Type" EntitySet="sys_Type" />
+            <End Role="sys_dev_model" EntitySet="sys_dev_model" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_dev_type_sys_Category" Association="Self.FK_sys_dev_type_sys_Category">
+            <End Role="sys_Category" EntitySet="sys_Category" />
+            <End Role="sys_dev_type" EntitySet="sys_dev_type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_branch" Association="Self.FK_sys_devices_sys_branch">
+            <End Role="sys_branch" EntitySet="sys_branch" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_Category" Association="Self.FK_sys_devices_sys_Category">
+            <End Role="sys_Category" EntitySet="sys_Category" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_Dept" Association="Self.FK_sys_devices_sys_Dept">
+            <End Role="sys_Dept" EntitySet="sys_Dept" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_dev_type" Association="Self.FK_sys_devices_sys_dev_type">
+            <End Role="sys_dev_type" EntitySet="sys_dev_type" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_Devices_Model" Association="Self.FK_sys_devices_sys_Devices_Model">
+            <End Role="sys_dev_model" EntitySet="sys_dev_model" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_status" Association="Self.FK_sys_devices_sys_status">
+            <End Role="sys_status" EntitySet="sys_status" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_Type" Association="Self.FK_sys_devices_sys_Type">
+            <End Role="sys_Type" EntitySet="sys_Type" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_phone_sys_branch" Association="Self.FK_sys_phone_sys_branch">
+            <End Role="sys_branch" EntitySet="sys_branch" />
+            <End Role="sys_phone" EntitySet="sys_phone" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TonerReports_sys_branch" Association="Self.FK_TonerReports_sys_branch">
+            <End Role="sys_branch" EntitySet="sys_branch" />
+            <End Role="TonerReports" EntitySet="TonerReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TonerReports_sys_Toners" Association="Self.FK_TonerReports_sys_Toners">
+            <End Role="sys_Toners" EntitySet="sys_Toners" />
+            <End Role="TonerReports" EntitySet="TonerReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TonerReports_sys_Users" Association="Self.FK_TonerReports_sys_Users">
+            <End Role="sys_Users" EntitySet="sys_Users" />
+            <End Role="TonerReports" EntitySet="TonerReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransActinos_sys_Users" Association="Self.FK_TransActinos_sys_Users">
+            <End Role="sys_Users" EntitySet="sys_Users" />
+            <End Role="TransActions" EntitySet="TransActions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OthaimITModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="device_Cycle">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="device_id" Type="Int32" />
+          <Property Name="dev_SN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HDR_ID" Type="Int32" />
+          <Property Name="DocType_ID" Type="Int32" />
+          <Property Name="To_SIte" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="STK_HDR" Relationship="Self.FK_device_Cycle_STK_HDR" FromRole="device_Cycle" ToRole="STK_HDR" />
+          <NavigationProperty Name="sys_devices" Relationship="Self.FK_device_Cycle_sys_devices" FromRole="device_Cycle" ToRole="sys_devices" />
+          <NavigationProperty Name="sys_doc_type" Relationship="Self.FK_device_Cycle_sys_doc_type" FromRole="device_Cycle" ToRole="sys_doc_type" />
+        </EntityType>
+        <EntityType Name="FeedBack">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Issus" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="user_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="app_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ver_date" Type="DateTime" Precision="0" />
+          <Property Name="update_path" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="STK_DTL">
+          <Key>
+            <PropertyRef Name="DTL_ID" />
+          </Key>
+          <Property Name="DTL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HDR_ID" Type="Int32" Nullable="false" />
+          <Property Name="Device_id" Type="Int32" />
+          <Property Name="model_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="item_Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="device_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="device_SN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="STK_HDR" Relationship="Self.FK_STK_DTL_STK_HDR" FromRole="STK_DTL" ToRole="STK_HDR" />
+          <NavigationProperty Name="sys_devices" Relationship="Self.FK_STK_DTL_sys_devices" FromRole="STK_DTL" ToRole="sys_devices" />
+        </EntityType>
+        <EntityType Name="STK_HDR">
+          <Key>
+            <PropertyRef Name="HDR_ID" />
+          </Key>
+          <Property Name="HDR_ID" Type="Int32" Nullable="false" />
+          <Property Name="from_Site_Num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="from_Site_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="to_Site_Num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="to_Site_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="doc_type_id" Type="Int32" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="userCode" Type="Int32" />
+          <Property Name="Emp_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Code" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="device_Cycle" Relationship="Self.FK_device_Cycle_STK_HDR" FromRole="STK_HDR" ToRole="device_Cycle" />
+          <NavigationProperty Name="STK_DTL" Relationship="Self.FK_STK_DTL_STK_HDR" FromRole="STK_HDR" ToRole="STK_DTL" />
+          <NavigationProperty Name="sys_doc_type" Relationship="Self.FK_STK_HDR_sys_doc_type" FromRole="STK_HDR" ToRole="sys_doc_type" />
+        </EntityType>
+        <EntityType Name="sys_branch">
+          <Key>
+            <PropertyRef Name="branch_id" />
+          </Key>
+          <Property Name="branch_id" Type="Int32" Nullable="false" />
+          <Property Name="shrt_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_id" Type="Int32" />
+          <Property Name="Main_Store" Type="Boolean" />
+          <NavigationProperty Name="sys_Users" Relationship="Self.FK_sys_branch_sys_Users1" FromRole="sys_branch" ToRole="sys_Users" />
+          <NavigationProperty Name="sys_Dept" Relationship="Self.FK_sys_Dept_sys_branch" FromRole="sys_branch" ToRole="sys_Dept" />
+          <NavigationProperty Name="sys_devices" Relationship="Self.FK_sys_devices_sys_branch" FromRole="sys_branch" ToRole="sys_devices" />
+          <NavigationProperty Name="sys_phone" Relationship="Self.FK_sys_phone_sys_branch" FromRole="sys_branch" ToRole="sys_phone" />
+          <NavigationProperty Name="TonerReports" Relationship="Self.FK_TonerReports_sys_branch" FromRole="sys_branch" ToRole="TonerReports" />
+          <NavigationProperty Name="Contact_Branches" Relationship="OthaimITModel.FK_Contact_Branches_sys_branch" FromRole="sys_branch" ToRole="Contact_Branches" />
+        </EntityType>
+        <EntityType Name="sys_Category">
+          <Key>
+            <PropertyRef Name="category_ID" />
+          </Key>
+          <Property Name="category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="shrt_id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="sys_dev_model" Relationship="Self.FK_sys_dev_model_sys_Category" FromRole="sys_Category" ToRole="sys_dev_model" />
+          <NavigationProperty Name="sys_dev_type" Relationship="Self.FK_sys_dev_type_sys_Category" FromRole="sys_Category" ToRole="sys_dev_type" />
+          <NavigationProperty Name="sys_devices" Relationship="Self.FK_sys_devices_sys_Category" FromRole="sys_Category" ToRole="sys_devices" />
+        </EntityType>
+        <EntityType Name="sys_connection_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sys_Dept">
+          <Key>
+            <PropertyRef Name="dept_id" />
+          </Key>
+          <Property Name="dept_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="branch_id" Type="Int32" />
+          <NavigationProperty Name="sys_branch" Relationship="Self.FK_sys_Dept_sys_branch" FromRole="sys_Dept" ToRole="sys_branch" />
+          <NavigationProperty Name="sys_devices" Relationship="Self.FK_sys_devices_sys_Dept" FromRole="sys_Dept" ToRole="sys_devices" />
+        </EntityType>
+        <EntityType Name="sys_dev_model">
+          <Key>
+            <PropertyRef Name="model_id" />
+          </Key>
+          <Property Name="model_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Item_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="devType_ID" Type="Int32" />
+          <Property Name="category_ID" Type="Int32" />
+          <Property Name="type_id" Type="Int32" />
+          <NavigationProperty Name="sys_Category" Relationship="Self.FK_sys_dev_model_sys_Category" FromRole="sys_dev_model" ToRole="sys_Category" />
+          <NavigationProperty Name="sys_dev_type" Relationship="Self.FK_sys_dev_model_sys_dev_type" FromRole="sys_dev_model" ToRole="sys_dev_type" />
+          <NavigationProperty Name="sys_Type" Relationship="Self.FK_sys_dev_model_sys_Type" FromRole="sys_dev_model" ToRole="sys_Type" />
+          <NavigationProperty Name="sys_devices" Relationship="Self.FK_sys_devices_sys_Devices_Model" FromRole="sys_dev_model" ToRole="sys_devices" />
+        </EntityType>
+        <EntityType Name="sys_dev_type">
+          <Key>
+            <PropertyRef Name="devType_ID" />
+          </Key>
+          <Property Name="devType_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dev_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Category_ID" Type="Int32" />
+          <NavigationProperty Name="sys_Category" Relationship="Self.FK_sys_dev_type_sys_Category" FromRole="sys_dev_type" ToRole="sys_Category" />
+          <NavigationProperty Name="sys_dev_model" Relationship="Self.FK_sys_dev_model_sys_dev_type" FromRole="sys_dev_type" ToRole="sys_dev_model" />
+          <NavigationProperty Name="sys_devices" Relationship="Self.FK_sys_devices_sys_dev_type" FromRole="sys_dev_type" ToRole="sys_devices" />
+        </EntityType>
+        <EntityType Name="sys_devices">
+          <Key>
+            <PropertyRef Name="Device_id" />
+          </Key>
+          <Property Name="Device_id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="model_id" Type="Int32" />
+          <Property Name="dev_Type_id" Type="Int32" />
+          <Property Name="category_ID" Type="Int32" />
+          <Property Name="branch_id" Type="Int32" />
+          <Property Name="rec_date" Type="DateTime" Precision="0" />
+          <Property Name="opr_date" Type="DateTime" Precision="0" />
+          <Property Name="type_id" Type="Int32" />
+          <Property Name="status_id" Type="Int32" />
+          <Property Name="dept_id" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="device_Cycle" Relationship="Self.FK_device_Cycle_sys_devices" FromRole="sys_devices" ToRole="device_Cycle" />
+          <NavigationProperty Name="STK_DTL" Relationship="Self.FK_STK_DTL_sys_devices" FromRole="sys_devices" ToRole="STK_DTL" />
+          <NavigationProperty Name="sys_branch" Relationship="Self.FK_sys_devices_sys_branch" FromRole="sys_devices" ToRole="sys_branch" />
+          <NavigationProperty Name="sys_Category" Relationship="Self.FK_sys_devices_sys_Category" FromRole="sys_devices" ToRole="sys_Category" />
+          <NavigationProperty Name="sys_Dept" Relationship="Self.FK_sys_devices_sys_Dept" FromRole="sys_devices" ToRole="sys_Dept" />
+          <NavigationProperty Name="sys_dev_model" Relationship="Self.FK_sys_devices_sys_Devices_Model" FromRole="sys_devices" ToRole="sys_dev_model" />
+          <NavigationProperty Name="sys_dev_type" Relationship="Self.FK_sys_devices_sys_dev_type" FromRole="sys_devices" ToRole="sys_dev_type" />
+          <NavigationProperty Name="sys_status" Relationship="Self.FK_sys_devices_sys_status" FromRole="sys_devices" ToRole="sys_status" />
+          <NavigationProperty Name="sys_Type" Relationship="Self.FK_sys_devices_sys_Type" FromRole="sys_devices" ToRole="sys_Type" />
+        </EntityType>
+        <EntityType Name="sys_doc_type">
+          <Key>
+            <PropertyRef Name="doc_type_id" />
+          </Key>
+          <Property Name="doc_type_id" Type="Int32" Nullable="false" />
+          <Property Name="doc_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="device_Cycle" Relationship="Self.FK_device_Cycle_sys_doc_type" FromRole="sys_doc_type" ToRole="device_Cycle" />
+          <NavigationProperty Name="STK_HDR" Relationship="Self.FK_STK_HDR_sys_doc_type" FromRole="sys_doc_type" ToRole="STK_HDR" />
+        </EntityType>
+        <EntityType Name="sys_phone">
+          <Key>
+            <PropertyRef Name="phone_id" />
+          </Key>
+          <Property Name="phone_id" Type="Int32" Nullable="false" />
+          <Property Name="simcard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="simCardSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LandLine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="branch_id" Type="Int32" />
+          <Property Name="note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quota" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="sys_branch" Relationship="Self.FK_sys_phone_sys_branch" FromRole="sys_phone" ToRole="sys_branch" />
+        </EntityType>
+        <EntityType Name="sys_status">
+          <Key>
+            <PropertyRef Name="status_id" />
+          </Key>
+          <Property Name="status_id" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="sys_devices" Relationship="Self.FK_sys_devices_sys_status" FromRole="sys_status" ToRole="sys_devices" />
+        </EntityType>
+        <EntityType Name="sys_Toners">
+          <Key>
+            <PropertyRef Name="Toner_ID" />
+          </Key>
+          <Property Name="Toner_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Toner_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Print_Avarage" Type="Int32" />
+          <NavigationProperty Name="TonerReports" Relationship="Self.FK_TonerReports_sys_Toners" FromRole="sys_Toners" ToRole="TonerReports" />
+        </EntityType>
+        <EntityType Name="sys_Type">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="sys_dev_model" Relationship="Self.FK_sys_dev_model_sys_Type" FromRole="sys_Type" ToRole="sys_dev_model" />
+          <NavigationProperty Name="sys_devices" Relationship="Self.FK_sys_devices_sys_Type" FromRole="sys_Type" ToRole="sys_devices" />
+        </EntityType>
+        <EntityType Name="sys_Users">
+          <Key>
+            <PropertyRef Name="User_id" />
+          </Key>
+          <Property Name="User_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JobCode" Type="Int32" />
+          <Property Name="mustPassChange" Type="Boolean" />
+          <Property Name="accountDisabled" Type="Boolean" />
+          <Property Name="brWin" Type="Boolean" />
+          <Property Name="brNewbtn" Type="Boolean" />
+          <Property Name="brEditbtn" Type="Boolean" />
+          <Property Name="brDeletebtn" Type="Boolean" />
+          <Property Name="deptWin" Type="Boolean" />
+          <Property Name="deptNewbtn" Type="Boolean" />
+          <Property Name="deptEditbtn" Type="Boolean" />
+          <Property Name="deptDeletebtn" Type="Boolean" />
+          <Property Name="usrWin" Type="Boolean" />
+          <Property Name="usrNewbtn" Type="Boolean" />
+          <Property Name="usrEditbtn" Type="Boolean" />
+          <Property Name="usrDeletebtn" Type="Boolean" />
+          <Property Name="catWin" Type="Boolean" />
+          <Property Name="catNewbtn" Type="Boolean" />
+          <Property Name="catEditbtn" Type="Boolean" />
+          <Property Name="catDeletebtn" Type="Boolean" />
+          <Property Name="devTypeWin" Type="Boolean" />
+          <Property Name="devTypeNewbtn" Type="Boolean" />
+          <Property Name="devTypeEditbtn" Type="Boolean" />
+          <Property Name="devTypeDeletebtn" Type="Boolean" />
+          <Property Name="mdlWin" Type="Boolean" />
+          <Property Name="mdlNewbtn" Type="Boolean" />
+          <Property Name="mdlEditbtn" Type="Boolean" />
+          <Property Name="mdlDeletebtn" Type="Boolean" />
+          <Property Name="typeWin" Type="Boolean" />
+          <Property Name="typeNewbtn" Type="Boolean" />
+          <Property Name="typeEditbtn" Type="Boolean" />
+          <Property Name="typeDeletebtn" Type="Boolean" />
+          <Property Name="statWin" Type="Boolean" />
+          <Property Name="statNewbtn" Type="Boolean" />
+          <Property Name="statEditbtn" Type="Boolean" />
+          <Property Name="statDeletebtn" Type="Boolean" />
+          <Property Name="devWin" Type="Boolean" />
+          <Property Name="devNewbtn" Type="Boolean" />
+          <Property Name="devEditbtn" Type="Boolean" />
+          <Property Name="devDeletebtn" Type="Boolean" />
+          <Property Name="transoutWin" Type="Boolean" />
+          <Property Name="transInWin" Type="Boolean" />
+          <Property Name="transReportWin" Type="Boolean" />
+          <Property Name="transReportDeletebtn" Type="Boolean" />
+          <Property Name="stock" Type="Boolean" />
+          <Property Name="feedBackMgr" Type="Boolean" />
+          <Property Name="Authority" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneWin" Type="Boolean" />
+          <Property Name="phoneNewbtn" Type="Boolean" />
+          <Property Name="phoneEditbtn" Type="Boolean" />
+          <Property Name="phoneDeletebtn" Type="Boolean" />
+          <Property Name="TonerWin" Type="Boolean" />
+          <Property Name="TonerReportWin" Type="Boolean" />
+          <Property Name="DevCycleReportWin" Type="Boolean" />
+          <Property Name="DevReportWin" Type="Boolean" />
+          <Property Name="MaintenanceWin" Type="Boolean" />
+          <Property Name="DepreciationWin" Type="Boolean" />
+          <Property Name="LoginCount" Type="Int32" />
+          <Property Name="ContactBranchesWin" Type="Boolean" />
+          <NavigationProperty Name="sys_branch" Relationship="Self.FK_sys_branch_sys_Users1" FromRole="sys_Users" ToRole="sys_branch" />
+          <NavigationProperty Name="TonerReports" Relationship="Self.FK_TonerReports_sys_Users" FromRole="sys_Users" ToRole="TonerReports" />
+          <NavigationProperty Name="TransActions" Relationship="Self.FK_TransActinos_sys_Users" FromRole="sys_Users" ToRole="TransActions" />
+          <Property Name="Thechnical" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TonerReports">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Branch_ID" Type="Int32" />
+          <Property Name="Toner_ID" Type="Int32" />
+          <Property Name="User_ID" Type="Int32" />
+          <Property Name="PrintCount" Type="Int32" />
+          <Property Name="First_Date" Type="DateTime" Precision="0" />
+          <Property Name="Last_Date" Type="DateTime" Precision="0" />
+          <Property Name="Order_Date" Type="DateTime" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="sys_branch" Relationship="Self.FK_TonerReports_sys_branch" FromRole="TonerReports" ToRole="sys_branch" />
+          <NavigationProperty Name="sys_Toners" Relationship="Self.FK_TonerReports_sys_Toners" FromRole="TonerReports" ToRole="sys_Toners" />
+          <NavigationProperty Name="sys_Users" Relationship="Self.FK_TonerReports_sys_Users" FromRole="TonerReports" ToRole="sys_Users" />
+        </EntityType>
+        <EntityType Name="TransActions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IP_PC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="user_name_PC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="host_name_PC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="User_ID" Type="Int32" />
+          <NavigationProperty Name="sys_Users" Relationship="Self.FK_TransActinos_sys_Users" FromRole="TransActions" ToRole="sys_Users" />
+        </EntityType>
+        <Association Name="FK_device_Cycle_STK_HDR">
+          <End Role="STK_HDR" Type="Self.STK_HDR" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="device_Cycle" Type="Self.device_Cycle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STK_HDR">
+              <PropertyRef Name="HDR_ID" />
+            </Principal>
+            <Dependent Role="device_Cycle">
+              <PropertyRef Name="HDR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_device_Cycle_sys_devices">
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="device_Cycle" Type="Self.device_Cycle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_devices">
+              <PropertyRef Name="Device_id" />
+            </Principal>
+            <Dependent Role="device_Cycle">
+              <PropertyRef Name="device_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_device_Cycle_sys_doc_type">
+          <End Role="sys_doc_type" Type="Self.sys_doc_type" Multiplicity="0..1" />
+          <End Role="device_Cycle" Type="Self.device_Cycle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_doc_type">
+              <PropertyRef Name="doc_type_id" />
+            </Principal>
+            <Dependent Role="device_Cycle">
+              <PropertyRef Name="DocType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STK_DTL_STK_HDR">
+          <End Role="STK_HDR" Type="Self.STK_HDR" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="STK_DTL" Type="Self.STK_DTL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STK_HDR">
+              <PropertyRef Name="HDR_ID" />
+            </Principal>
+            <Dependent Role="STK_DTL">
+              <PropertyRef Name="HDR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STK_DTL_sys_devices">
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="0..1" />
+          <End Role="STK_DTL" Type="Self.STK_DTL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_devices">
+              <PropertyRef Name="Device_id" />
+            </Principal>
+            <Dependent Role="STK_DTL">
+              <PropertyRef Name="Device_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STK_HDR_sys_doc_type">
+          <End Role="sys_doc_type" Type="Self.sys_doc_type" Multiplicity="0..1" />
+          <End Role="STK_HDR" Type="Self.STK_HDR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_doc_type">
+              <PropertyRef Name="doc_type_id" />
+            </Principal>
+            <Dependent Role="STK_HDR">
+              <PropertyRef Name="doc_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_branch_sys_Users1">
+          <End Role="sys_Users" Type="Self.sys_Users" Multiplicity="0..1" />
+          <End Role="sys_branch" Type="Self.sys_branch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Users">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="sys_branch">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_Dept_sys_branch">
+          <End Role="sys_branch" Type="Self.sys_branch" Multiplicity="0..1" />
+          <End Role="sys_Dept" Type="Self.sys_Dept" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_branch">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="sys_Dept">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_branch">
+          <End Role="sys_branch" Type="Self.sys_branch" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_branch">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_phone_sys_branch">
+          <End Role="sys_branch" Type="Self.sys_branch" Multiplicity="0..1" />
+          <End Role="sys_phone" Type="Self.sys_phone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_branch">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="sys_phone">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TonerReports_sys_branch">
+          <End Role="sys_branch" Type="Self.sys_branch" Multiplicity="0..1" />
+          <End Role="TonerReports" Type="Self.TonerReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_branch">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="TonerReports">
+              <PropertyRef Name="Branch_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_dev_model_sys_Category">
+          <End Role="sys_Category" Type="Self.sys_Category" Multiplicity="0..1" />
+          <End Role="sys_dev_model" Type="Self.sys_dev_model" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Category">
+              <PropertyRef Name="category_ID" />
+            </Principal>
+            <Dependent Role="sys_dev_model">
+              <PropertyRef Name="category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_dev_type_sys_Category">
+          <End Role="sys_Category" Type="Self.sys_Category" Multiplicity="0..1" />
+          <End Role="sys_dev_type" Type="Self.sys_dev_type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Category">
+              <PropertyRef Name="category_ID" />
+            </Principal>
+            <Dependent Role="sys_dev_type">
+              <PropertyRef Name="Category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_Category">
+          <End Role="sys_Category" Type="Self.sys_Category" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Category">
+              <PropertyRef Name="category_ID" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_Dept">
+          <End Role="sys_Dept" Type="Self.sys_Dept" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Dept">
+              <PropertyRef Name="dept_id" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="dept_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_dev_model_sys_dev_type">
+          <End Role="sys_dev_type" Type="Self.sys_dev_type" Multiplicity="0..1" />
+          <End Role="sys_dev_model" Type="Self.sys_dev_model" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_dev_type">
+              <PropertyRef Name="devType_ID" />
+            </Principal>
+            <Dependent Role="sys_dev_model">
+              <PropertyRef Name="devType_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_dev_model_sys_Type">
+          <End Role="sys_Type" Type="Self.sys_Type" Multiplicity="0..1" />
+          <End Role="sys_dev_model" Type="Self.sys_dev_model" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Type">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="sys_dev_model">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_Devices_Model">
+          <End Role="sys_dev_model" Type="Self.sys_dev_model" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_dev_model">
+              <PropertyRef Name="model_id" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="model_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_dev_type">
+          <End Role="sys_dev_type" Type="Self.sys_dev_type" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_dev_type">
+              <PropertyRef Name="devType_ID" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="dev_Type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_status">
+          <End Role="sys_status" Type="Self.sys_status" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_status">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sys_devices_sys_Type">
+          <End Role="sys_Type" Type="Self.sys_Type" Multiplicity="0..1" />
+          <End Role="sys_devices" Type="Self.sys_devices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Type">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="sys_devices">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TonerReports_sys_Toners">
+          <End Role="sys_Toners" Type="Self.sys_Toners" Multiplicity="0..1" />
+          <End Role="TonerReports" Type="Self.TonerReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Toners">
+              <PropertyRef Name="Toner_ID" />
+            </Principal>
+            <Dependent Role="TonerReports">
+              <PropertyRef Name="Toner_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TonerReports_sys_Users">
+          <End Role="sys_Users" Type="Self.sys_Users" Multiplicity="0..1" />
+          <End Role="TonerReports" Type="Self.TonerReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Users">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="TonerReports">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransActinos_sys_Users">
+          <End Role="sys_Users" Type="Self.sys_Users" Multiplicity="0..1" />
+          <End Role="TransActions" Type="Self.TransActions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_Users">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="TransActions">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OthaimITEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="device_Cycle" EntityType="Self.device_Cycle" />
+          <EntitySet Name="FeedBack" EntityType="Self.FeedBack" />
+          <EntitySet Name="info" EntityType="Self.info" />
+          <EntitySet Name="STK_DTL" EntityType="Self.STK_DTL" />
+          <EntitySet Name="STK_HDR" EntityType="Self.STK_HDR" />
+          <EntitySet Name="sys_branch" EntityType="Self.sys_branch" />
+          <EntitySet Name="sys_Category" EntityType="Self.sys_Category" />
+          <EntitySet Name="sys_connection_type" EntityType="Self.sys_connection_type" />
+          <EntitySet Name="sys_Dept" EntityType="Self.sys_Dept" />
+          <EntitySet Name="sys_dev_model" EntityType="Self.sys_dev_model" />
+          <EntitySet Name="sys_dev_type" EntityType="Self.sys_dev_type" />
+          <EntitySet Name="sys_devices" EntityType="Self.sys_devices" />
+          <EntitySet Name="sys_doc_type" EntityType="Self.sys_doc_type" />
+          <EntitySet Name="sys_phone" EntityType="Self.sys_phone" />
+          <EntitySet Name="sys_status" EntityType="Self.sys_status" />
+          <EntitySet Name="sys_Toners" EntityType="Self.sys_Toners" />
+          <EntitySet Name="sys_Type" EntityType="Self.sys_Type" />
+          <EntitySet Name="sys_Users" EntityType="Self.sys_Users" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TonerReports" EntityType="Self.TonerReports" />
+          <EntitySet Name="TransActions" EntityType="Self.TransActions" />
+          <AssociationSet Name="FK_device_Cycle_STK_HDR" Association="Self.FK_device_Cycle_STK_HDR">
+            <End Role="STK_HDR" EntitySet="STK_HDR" />
+            <End Role="device_Cycle" EntitySet="device_Cycle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_device_Cycle_sys_devices" Association="Self.FK_device_Cycle_sys_devices">
+            <End Role="sys_devices" EntitySet="sys_devices" />
+            <End Role="device_Cycle" EntitySet="device_Cycle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_device_Cycle_sys_doc_type" Association="Self.FK_device_Cycle_sys_doc_type">
+            <End Role="sys_doc_type" EntitySet="sys_doc_type" />
+            <End Role="device_Cycle" EntitySet="device_Cycle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STK_DTL_STK_HDR" Association="Self.FK_STK_DTL_STK_HDR">
+            <End Role="STK_HDR" EntitySet="STK_HDR" />
+            <End Role="STK_DTL" EntitySet="STK_DTL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STK_DTL_sys_devices" Association="Self.FK_STK_DTL_sys_devices">
+            <End Role="sys_devices" EntitySet="sys_devices" />
+            <End Role="STK_DTL" EntitySet="STK_DTL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STK_HDR_sys_doc_type" Association="Self.FK_STK_HDR_sys_doc_type">
+            <End Role="sys_doc_type" EntitySet="sys_doc_type" />
+            <End Role="STK_HDR" EntitySet="STK_HDR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_branch_sys_Users1" Association="Self.FK_sys_branch_sys_Users1">
+            <End Role="sys_Users" EntitySet="sys_Users" />
+            <End Role="sys_branch" EntitySet="sys_branch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_Dept_sys_branch" Association="Self.FK_sys_Dept_sys_branch">
+            <End Role="sys_branch" EntitySet="sys_branch" />
+            <End Role="sys_Dept" EntitySet="sys_Dept" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_branch" Association="Self.FK_sys_devices_sys_branch">
+            <End Role="sys_branch" EntitySet="sys_branch" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_phone_sys_branch" Association="Self.FK_sys_phone_sys_branch">
+            <End Role="sys_branch" EntitySet="sys_branch" />
+            <End Role="sys_phone" EntitySet="sys_phone" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TonerReports_sys_branch" Association="Self.FK_TonerReports_sys_branch">
+            <End Role="sys_branch" EntitySet="sys_branch" />
+            <End Role="TonerReports" EntitySet="TonerReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_dev_model_sys_Category" Association="Self.FK_sys_dev_model_sys_Category">
+            <End Role="sys_Category" EntitySet="sys_Category" />
+            <End Role="sys_dev_model" EntitySet="sys_dev_model" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_dev_type_sys_Category" Association="Self.FK_sys_dev_type_sys_Category">
+            <End Role="sys_Category" EntitySet="sys_Category" />
+            <End Role="sys_dev_type" EntitySet="sys_dev_type" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_Category" Association="Self.FK_sys_devices_sys_Category">
+            <End Role="sys_Category" EntitySet="sys_Category" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_Dept" Association="Self.FK_sys_devices_sys_Dept">
+            <End Role="sys_Dept" EntitySet="sys_Dept" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_dev_model_sys_dev_type" Association="Self.FK_sys_dev_model_sys_dev_type">
+            <End Role="sys_dev_type" EntitySet="sys_dev_type" />
+            <End Role="sys_dev_model" EntitySet="sys_dev_model" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_dev_model_sys_Type" Association="Self.FK_sys_dev_model_sys_Type">
+            <End Role="sys_Type" EntitySet="sys_Type" />
+            <End Role="sys_dev_model" EntitySet="sys_dev_model" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_Devices_Model" Association="Self.FK_sys_devices_sys_Devices_Model">
+            <End Role="sys_dev_model" EntitySet="sys_dev_model" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_dev_type" Association="Self.FK_sys_devices_sys_dev_type">
+            <End Role="sys_dev_type" EntitySet="sys_dev_type" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_status" Association="Self.FK_sys_devices_sys_status">
+            <End Role="sys_status" EntitySet="sys_status" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sys_devices_sys_Type" Association="Self.FK_sys_devices_sys_Type">
+            <End Role="sys_Type" EntitySet="sys_Type" />
+            <End Role="sys_devices" EntitySet="sys_devices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TonerReports_sys_Toners" Association="Self.FK_TonerReports_sys_Toners">
+            <End Role="sys_Toners" EntitySet="sys_Toners" />
+            <End Role="TonerReports" EntitySet="TonerReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TonerReports_sys_Users" Association="Self.FK_TonerReports_sys_Users">
+            <End Role="sys_Users" EntitySet="sys_Users" />
+            <End Role="TonerReports" EntitySet="TonerReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransActinos_sys_Users" Association="Self.FK_TransActinos_sys_Users">
+            <End Role="sys_Users" EntitySet="sys_Users" />
+            <End Role="TransActions" EntitySet="TransActions" />
+          </AssociationSet>
+          <FunctionImport Name="delete_Device_root" ReturnType="Collection(OthaimITModel.delete_Device_root_Result)" />
+          <FunctionImport Name="Dispose" ReturnType="Collection(OthaimITModel.Dispose_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(OthaimITModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(OthaimITModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="Contact_Branches" EntityType="OthaimITModel.Contact_Branches" />
+          <AssociationSet Name="FK_Contact_Branches_sys_branch" Association="OthaimITModel.FK_Contact_Branches_sys_branch">
+            <End Role="sys_branch" EntitySet="sys_branch" />
+            <End Role="Contact_Branches" EntitySet="Contact_Branches" />
+          </AssociationSet>
+        </EntityContainer>
+        <ComplexType Name="delete_Device_root_Result">
+          <Property Type="Int32" Name="Device_id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SN" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="model_id" Nullable="true" />
+          <Property Type="Int32" Name="dev_Type_id" Nullable="true" />
+          <Property Type="Int32" Name="category_ID" Nullable="true" />
+          <Property Type="Int32" Name="branch_id" Nullable="true" />
+          <Property Type="DateTime" Name="rec_date" Nullable="true" />
+          <Property Type="DateTime" Name="opr_date" Nullable="true" />
+          <Property Type="Int32" Name="type_id" Nullable="true" />
+          <Property Type="Int32" Name="status_id" Nullable="true" />
+          <Property Type="Int32" Name="dept_id" Nullable="true" />
+          <Property Type="String" Name="Notes" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="Dispose_Result">
+          <Property Type="Int32" Name="HDR_ID" Nullable="false" />
+          <Property Type="String" Name="from_Site_Num" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="from_Site_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="to_Site_Num" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="to_Site_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="userName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="userCode" Nullable="true" />
+          <Property Type="String" Name="Emp_Name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Emp_Code" Nullable="true" />
+          <Property Type="DateTime" Name="date" Nullable="true" />
+          <Property Type="String" Name="doc_type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="model_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="item_Code" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="device_name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="device_SN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="note" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Contact_Branches">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="branch_id" Type="Int32" />
+          <Property Name="Emp_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_Num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="sys_branch" Relationship="OthaimITModel.FK_Contact_Branches_sys_branch" FromRole="Contact_Branches" ToRole="sys_branch" />
+        </EntityType>
+        <Association Name="FK_Contact_Branches_sys_branch">
+          <End Type="OthaimITModel.sys_branch" Role="sys_branch" Multiplicity="0..1" />
+          <End Type="OthaimITModel.Contact_Branches" Role="Contact_Branches" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sys_branch">
+              <PropertyRef Name="branch_id" />
+            </Principal>
+            <Dependent Role="Contact_Branches">
+              <PropertyRef Name="branch_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OthaimITModelStoreContainer" CdmEntityContainer="OthaimITEntities">
+          <EntitySetMapping Name="device_Cycle">
+            <EntityTypeMapping TypeName="OthaimITModel.device_Cycle">
+              <MappingFragment StoreEntitySet="device_Cycle">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="device_id" ColumnName="device_id" />
+                <ScalarProperty Name="dev_SN" ColumnName="dev_SN" />
+                <ScalarProperty Name="HDR_ID" ColumnName="HDR_ID" />
+                <ScalarProperty Name="DocType_ID" ColumnName="DocType_ID" />
+                <ScalarProperty Name="To_SIte" ColumnName="To_SIte" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FeedBack">
+            <EntityTypeMapping TypeName="OthaimITModel.FeedBack">
+              <MappingFragment StoreEntitySet="FeedBack">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="Issus" ColumnName="Issus" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="user_Name" ColumnName="user_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="info">
+            <EntityTypeMapping TypeName="OthaimITModel.info">
+              <MappingFragment StoreEntitySet="info">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="app_Name" ColumnName="app_Name" />
+                <ScalarProperty Name="ver" ColumnName="ver" />
+                <ScalarProperty Name="ver_date" ColumnName="ver_date" />
+                <ScalarProperty Name="update_path" ColumnName="update_path" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STK_DTL">
+            <EntityTypeMapping TypeName="OthaimITModel.STK_DTL">
+              <MappingFragment StoreEntitySet="STK_DTL">
+                <ScalarProperty Name="DTL_ID" ColumnName="DTL_ID" />
+                <ScalarProperty Name="HDR_ID" ColumnName="HDR_ID" />
+                <ScalarProperty Name="Device_id" ColumnName="Device_id" />
+                <ScalarProperty Name="model_Name" ColumnName="model_Name" />
+                <ScalarProperty Name="item_Code" ColumnName="item_Code" />
+                <ScalarProperty Name="device_name" ColumnName="device_name" />
+                <ScalarProperty Name="device_SN" ColumnName="device_SN" />
+                <ScalarProperty Name="note" ColumnName="note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STK_HDR">
+            <EntityTypeMapping TypeName="OthaimITModel.STK_HDR">
+              <MappingFragment StoreEntitySet="STK_HDR">
+                <ScalarProperty Name="HDR_ID" ColumnName="HDR_ID" />
+                <ScalarProperty Name="from_Site_Num" ColumnName="from_Site_Num" />
+                <ScalarProperty Name="from_Site_Name" ColumnName="from_Site_Name" />
+                <ScalarProperty Name="to_Site_Num" ColumnName="to_Site_Num" />
+                <ScalarProperty Name="to_Site_Name" ColumnName="to_Site_Name" />
+                <ScalarProperty Name="doc_type_id" ColumnName="doc_type_id" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userCode" ColumnName="userCode" />
+                <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+                <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="note" ColumnName="note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_branch">
+            <EntityTypeMapping TypeName="OthaimITModel.sys_branch">
+              <MappingFragment StoreEntitySet="sys_branch">
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="shrt_id" ColumnName="shrt_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Main_Store" ColumnName="Main_Store" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_Category">
+            <EntityTypeMapping TypeName="OthaimITModel.sys_Category">
+              <MappingFragment StoreEntitySet="sys_Category">
+                <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+                <ScalarProperty Name="shrt_id" ColumnName="shrt_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_connection_type">
+            <EntityTypeMapping TypeName="OthaimITModel.sys_connection_type">
+              <MappingFragment StoreEntitySet="sys_connection_type">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_Dept">
+            <EntityTypeMapping TypeName="OthaimITModel.sys_Dept">
+              <MappingFragment StoreEntitySet="sys_Dept">
+                <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_dev_model">
+            <EntityTypeMapping TypeName="OthaimITModel.sys_dev_model">
+              <MappingFragment StoreEntitySet="sys_dev_model">
+                <ScalarProperty Name="model_id" ColumnName="model_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="devType_ID" ColumnName="devType_ID" />
+                <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_dev_type">
+            <EntityTypeMapping TypeName="OthaimITModel.sys_dev_type">
+              <MappingFragment StoreEntitySet="sys_dev_type">
+                <ScalarProperty Name="devType_ID" ColumnName="devType_ID" />
+                <ScalarProperty Name="dev_type" ColumnName="dev_type" />
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_devices">
+            <EntityTypeMapping TypeName="OthaimITModel.sys_devices">
+              <MappingFragment StoreEntitySet="sys_devices">
+                <ScalarProperty Name="Device_id" ColumnName="Device_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SN" ColumnName="SN" />
+                <ScalarProperty Name="model_id" ColumnName="model_id" />
+                <ScalarProperty Name="dev_Type_id" ColumnName="dev_Type_id" />
+                <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="rec_date" ColumnName="rec_date" />
+                <ScalarProperty Name="opr_date" ColumnName="opr_date" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+                <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_doc_type">
+            <EntityTypeMapping TypeName="OthaimITModel.sys_doc_type">
+              <MappingFragment StoreEntitySet="sys_doc_type">
+                <ScalarProperty Name="doc_type_id" ColumnName="doc_type_id" />
+                <ScalarProperty Name="doc_type" ColumnName="doc_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_phone">
+            <EntityTypeMapping TypeName="OthaimITModel.sys_phone">
+              <MappingFragment StoreEntitySet="sys_phone">
+                <ScalarProperty Name="phone_id" ColumnName="phone_id" />
+                <ScalarProperty Name="simcard" ColumnName="simcard" />
+                <ScalarProperty Name="simCardSerial" ColumnName="simCardSerial" />
+                <ScalarProperty Name="LandLine" ColumnName="LandLine" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="Quota" ColumnName="Quota" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_status">
+            <EntityTypeMapping TypeName="OthaimITModel.sys_status">
+              <MappingFragment StoreEntitySet="sys_status">
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_Toners">
+            <EntityTypeMapping TypeName="OthaimITModel.sys_Toners">
+              <MappingFragment StoreEntitySet="sys_Toners">
+                <ScalarProperty Name="Toner_ID" ColumnName="Toner_ID" />
+                <ScalarProperty Name="Toner_Name" ColumnName="Toner_Name" />
+                <ScalarProperty Name="Print_Avarage" ColumnName="Print_Avarage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_Type">
+            <EntityTypeMapping TypeName="OthaimITModel.sys_Type">
+              <MappingFragment StoreEntitySet="sys_Type">
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_Users">
+            <EntityTypeMapping TypeName="OthaimITModel.sys_Users">
+              <MappingFragment StoreEntitySet="sys_Users">
+                <ScalarProperty Name="Thechnical" ColumnName="Thechnical" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="JobCode" ColumnName="JobCode" />
+                <ScalarProperty Name="mustPassChange" ColumnName="mustPassChange" />
+                <ScalarProperty Name="accountDisabled" ColumnName="accountDisabled" />
+                <ScalarProperty Name="brWin" ColumnName="brWin" />
+                <ScalarProperty Name="brNewbtn" ColumnName="brNewbtn" />
+                <ScalarProperty Name="brEditbtn" ColumnName="brEditbtn" />
+                <ScalarProperty Name="brDeletebtn" ColumnName="brDeletebtn" />
+                <ScalarProperty Name="deptWin" ColumnName="deptWin" />
+                <ScalarProperty Name="deptNewbtn" ColumnName="deptNewbtn" />
+                <ScalarProperty Name="deptEditbtn" ColumnName="deptEditbtn" />
+                <ScalarProperty Name="deptDeletebtn" ColumnName="deptDeletebtn" />
+                <ScalarProperty Name="usrWin" ColumnName="usrWin" />
+                <ScalarProperty Name="usrNewbtn" ColumnName="usrNewbtn" />
+                <ScalarProperty Name="usrEditbtn" ColumnName="usrEditbtn" />
+                <ScalarProperty Name="usrDeletebtn" ColumnName="usrDeletebtn" />
+                <ScalarProperty Name="catWin" ColumnName="catWin" />
+                <ScalarProperty Name="catNewbtn" ColumnName="catNewbtn" />
+                <ScalarProperty Name="catEditbtn" ColumnName="catEditbtn" />
+                <ScalarProperty Name="catDeletebtn" ColumnName="catDeletebtn" />
+                <ScalarProperty Name="devTypeWin" ColumnName="devTypeWin" />
+                <ScalarProperty Name="devTypeNewbtn" ColumnName="devTypeNewbtn" />
+                <ScalarProperty Name="devTypeEditbtn" ColumnName="devTypeEditbtn" />
+                <ScalarProperty Name="devTypeDeletebtn" ColumnName="devTypeDeletebtn" />
+                <ScalarProperty Name="mdlWin" ColumnName="mdlWin" />
+                <ScalarProperty Name="mdlNewbtn" ColumnName="mdlNewbtn" />
+                <ScalarProperty Name="mdlEditbtn" ColumnName="mdlEditbtn" />
+                <ScalarProperty Name="mdlDeletebtn" ColumnName="mdlDeletebtn" />
+                <ScalarProperty Name="typeWin" ColumnName="typeWin" />
+                <ScalarProperty Name="typeNewbtn" ColumnName="typeNewbtn" />
+                <ScalarProperty Name="typeEditbtn" ColumnName="typeEditbtn" />
+                <ScalarProperty Name="typeDeletebtn" ColumnName="typeDeletebtn" />
+                <ScalarProperty Name="statWin" ColumnName="statWin" />
+                <ScalarProperty Name="statNewbtn" ColumnName="statNewbtn" />
+                <ScalarProperty Name="statEditbtn" ColumnName="statEditbtn" />
+                <ScalarProperty Name="statDeletebtn" ColumnName="statDeletebtn" />
+                <ScalarProperty Name="devWin" ColumnName="devWin" />
+                <ScalarProperty Name="devNewbtn" ColumnName="devNewbtn" />
+                <ScalarProperty Name="devEditbtn" ColumnName="devEditbtn" />
+                <ScalarProperty Name="devDeletebtn" ColumnName="devDeletebtn" />
+                <ScalarProperty Name="transoutWin" ColumnName="transoutWin" />
+                <ScalarProperty Name="transInWin" ColumnName="transInWin" />
+                <ScalarProperty Name="transReportWin" ColumnName="transReportWin" />
+                <ScalarProperty Name="transReportDeletebtn" ColumnName="transReportDeletebtn" />
+                <ScalarProperty Name="stock" ColumnName="stock" />
+                <ScalarProperty Name="feedBackMgr" ColumnName="feedBackMgr" />
+                <ScalarProperty Name="Authority" ColumnName="Authority" />
+                <ScalarProperty Name="PhoneWin" ColumnName="PhoneWin" />
+                <ScalarProperty Name="phoneNewbtn" ColumnName="phoneNewbtn" />
+                <ScalarProperty Name="phoneEditbtn" ColumnName="phoneEditbtn" />
+                <ScalarProperty Name="phoneDeletebtn" ColumnName="phoneDeletebtn" />
+                <ScalarProperty Name="TonerWin" ColumnName="TonerWin" />
+                <ScalarProperty Name="TonerReportWin" ColumnName="TonerReportWin" />
+                <ScalarProperty Name="DevCycleReportWin" ColumnName="DevCycleReportWin" />
+                <ScalarProperty Name="DevReportWin" ColumnName="DevReportWin" />
+                <ScalarProperty Name="MaintenanceWin" ColumnName="MaintenanceWin" />
+                <ScalarProperty Name="DepreciationWin" ColumnName="DepreciationWin" />
+                <ScalarProperty Name="LoginCount" ColumnName="LoginCount" />
+                <ScalarProperty Name="ContactBranchesWin" ColumnName="ContactBranchesWin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="OthaimITModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TonerReports">
+            <EntityTypeMapping TypeName="OthaimITModel.TonerReports">
+              <MappingFragment StoreEntitySet="TonerReports">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
+                <ScalarProperty Name="Toner_ID" ColumnName="Toner_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="PrintCount" ColumnName="PrintCount" />
+                <ScalarProperty Name="First_Date" ColumnName="First_Date" />
+                <ScalarProperty Name="Last_Date" ColumnName="Last_Date" />
+                <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransActions">
+            <EntityTypeMapping TypeName="OthaimITModel.TransActions">
+              <MappingFragment StoreEntitySet="TransActions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="IP_PC" ColumnName="IP_PC" />
+                <ScalarProperty Name="user_name_PC" ColumnName="user_name_PC" />
+                <ScalarProperty Name="host_name_PC" ColumnName="host_name-PC" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="delete_Device_root" FunctionName="OthaimITModel.Store.delete_Device_root">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OthaimITModel.delete_Device_root_Result">
+                <ScalarProperty Name="Device_id" ColumnName="Device_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SN" ColumnName="SN" />
+                <ScalarProperty Name="model_id" ColumnName="model_id" />
+                <ScalarProperty Name="dev_Type_id" ColumnName="dev_Type_id" />
+                <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="rec_date" ColumnName="rec_date" />
+                <ScalarProperty Name="opr_date" ColumnName="opr_date" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+                <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Dispose" FunctionName="OthaimITModel.Store.Dispose">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OthaimITModel.Dispose_Result">
+                <ScalarProperty Name="HDR_ID" ColumnName="HDR_ID" />
+                <ScalarProperty Name="from_Site_Num" ColumnName="from_Site_Num" />
+                <ScalarProperty Name="from_Site_Name" ColumnName="from_Site_Name" />
+                <ScalarProperty Name="to_Site_Num" ColumnName="to_Site_Num" />
+                <ScalarProperty Name="to_Site_Name" ColumnName="to_Site_Name" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userCode" ColumnName="userCode" />
+                <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+                <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="doc_type" ColumnName="doc_type" />
+                <ScalarProperty Name="model_Name" ColumnName="model_Name" />
+                <ScalarProperty Name="item_Code" ColumnName="item_Code" />
+                <ScalarProperty Name="device_name" ColumnName="device_name" />
+                <ScalarProperty Name="device_SN" ColumnName="device_SN" />
+                <ScalarProperty Name="note" ColumnName="note" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="OthaimITModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="OthaimITModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="OthaimITModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="OthaimITModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OthaimITModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="OthaimITModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OthaimITModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="OthaimITModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="OthaimITModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="Contact_Branches">
+            <EntityTypeMapping TypeName="OthaimITModel.Contact_Branches">
+              <MappingFragment StoreEntitySet="Contact_Branches">
+                <ScalarProperty Name="Phone_Num" ColumnName="Phone_Num" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+                <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

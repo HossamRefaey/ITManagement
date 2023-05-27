@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ZKTeco_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="USERINFO">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BADGENUMBER" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SSN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="GENDER" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="TITLE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PAGER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="BIRTHDAY" Type="DateTime" Precision="3" />
+    <Property Name="HIREDDAY" Type="DateTime" Precision="3" />
+    <Property Name="STREET" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="STATE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ZIP" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="OPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FPHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VERIFICATIONMETHOD" Type="Int16" />
+    <Property Name="DEFAULTDEPTID" Type="Int16" />
+    <Property Name="SECURITYFLAGS" Type="Int16" />
+    <Property Name="ATT" Type="Int16" Nullable="false" />
+    <Property Name="INLATE" Type="Int16" Nullable="false" />
+    <Property Name="OUTEARLY" Type="Int16" Nullable="false" />
+    <Property Name="OVERTIME" Type="Int16" Nullable="false" />
+    <Property Name="SEP" Type="Int16" Nullable="false" />
+    <Property Name="HOLIDAY" Type="Int16" Nullable="false" />
+    <Property Name="MINZU" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LUNCHDURATION" Type="Int16" Nullable="false" />
+    <Property Name="MVerifyPass" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Notes" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="privilege" Type="Int32" />
+    <Property Name="InheritDeptSch" Type="Int16" />
+    <Property Name="InheritDeptSchClass" Type="Int16" />
+    <Property Name="AutoSchPlan" Type="Int16" />
+    <Property Name="MinAutoSchInterval" Type="Int32" />
+    <Property Name="RegisterOT" Type="Int16" />
+    <Property Name="InheritDeptRule" Type="Int16" />
+    <Property Name="EMPRIVILEGE" Type="Int16" />
+    <Property Name="CardNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FaceGroup" Type="Int32" />
+    <Property Name="AccGroup" Type="Int32" />
+    <Property Name="UseAccGroupTZ" Type="Int32" />
+    <Property Name="VerifyCode" Type="Int32" />
+    <Property Name="Expires" Type="Int32" />
+    <Property Name="ValidCount" Type="Int32" />
+    <Property Name="ValidTimeBegin" Type="DateTime" Precision="3" />
+    <Property Name="ValidTimeEnd" Type="DateTime" Precision="3" />
+    <Property Name="TimeZone1" Type="Int32" />
+    <Property Name="TimeZone2" Type="Int32" />
+    <Property Name="TimeZone3" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="ZKTeco_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="USERINFO" EntityType="Self.USERINFO" />
+  </EntityContainer>
+</Schema>

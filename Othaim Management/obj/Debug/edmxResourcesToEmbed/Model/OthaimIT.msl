@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OthaimITModelStoreContainer" CdmEntityContainer="OthaimITEntities">
+    <EntitySetMapping Name="device_Cycle">
+      <EntityTypeMapping TypeName="OthaimITModel.device_Cycle">
+        <MappingFragment StoreEntitySet="device_Cycle">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="device_id" ColumnName="device_id" />
+          <ScalarProperty Name="dev_SN" ColumnName="dev_SN" />
+          <ScalarProperty Name="HDR_ID" ColumnName="HDR_ID" />
+          <ScalarProperty Name="DocType_ID" ColumnName="DocType_ID" />
+          <ScalarProperty Name="To_SIte" ColumnName="To_SIte" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedBack">
+      <EntityTypeMapping TypeName="OthaimITModel.FeedBack">
+        <MappingFragment StoreEntitySet="FeedBack">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="Issus" ColumnName="Issus" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="user_Name" ColumnName="user_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="info">
+      <EntityTypeMapping TypeName="OthaimITModel.info">
+        <MappingFragment StoreEntitySet="info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="app_Name" ColumnName="app_Name" />
+          <ScalarProperty Name="ver" ColumnName="ver" />
+          <ScalarProperty Name="ver_date" ColumnName="ver_date" />
+          <ScalarProperty Name="update_path" ColumnName="update_path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STK_DTL">
+      <EntityTypeMapping TypeName="OthaimITModel.STK_DTL">
+        <MappingFragment StoreEntitySet="STK_DTL">
+          <ScalarProperty Name="DTL_ID" ColumnName="DTL_ID" />
+          <ScalarProperty Name="HDR_ID" ColumnName="HDR_ID" />
+          <ScalarProperty Name="Device_id" ColumnName="Device_id" />
+          <ScalarProperty Name="model_Name" ColumnName="model_Name" />
+          <ScalarProperty Name="item_Code" ColumnName="item_Code" />
+          <ScalarProperty Name="device_name" ColumnName="device_name" />
+          <ScalarProperty Name="device_SN" ColumnName="device_SN" />
+          <ScalarProperty Name="note" ColumnName="note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STK_HDR">
+      <EntityTypeMapping TypeName="OthaimITModel.STK_HDR">
+        <MappingFragment StoreEntitySet="STK_HDR">
+          <ScalarProperty Name="HDR_ID" ColumnName="HDR_ID" />
+          <ScalarProperty Name="from_Site_Num" ColumnName="from_Site_Num" />
+          <ScalarProperty Name="from_Site_Name" ColumnName="from_Site_Name" />
+          <ScalarProperty Name="to_Site_Num" ColumnName="to_Site_Num" />
+          <ScalarProperty Name="to_Site_Name" ColumnName="to_Site_Name" />
+          <ScalarProperty Name="doc_type_id" ColumnName="doc_type_id" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userCode" ColumnName="userCode" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+          <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="note" ColumnName="note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_branch">
+      <EntityTypeMapping TypeName="OthaimITModel.sys_branch">
+        <MappingFragment StoreEntitySet="sys_branch">
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+          <ScalarProperty Name="shrt_id" ColumnName="shrt_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Main_Store" ColumnName="Main_Store" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_Category">
+      <EntityTypeMapping TypeName="OthaimITModel.sys_Category">
+        <MappingFragment StoreEntitySet="sys_Category">
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="shrt_id" ColumnName="shrt_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_connection_type">
+      <EntityTypeMapping TypeName="OthaimITModel.sys_connection_type">
+        <MappingFragment StoreEntitySet="sys_connection_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_Dept">
+      <EntityTypeMapping TypeName="OthaimITModel.sys_Dept">
+        <MappingFragment StoreEntitySet="sys_Dept">
+          <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_dev_model">
+      <EntityTypeMapping TypeName="OthaimITModel.sys_dev_model">
+        <MappingFragment StoreEntitySet="sys_dev_model">
+          <ScalarProperty Name="model_id" ColumnName="model_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="devType_ID" ColumnName="devType_ID" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_dev_type">
+      <EntityTypeMapping TypeName="OthaimITModel.sys_dev_type">
+        <MappingFragment StoreEntitySet="sys_dev_type">
+          <ScalarProperty Name="devType_ID" ColumnName="devType_ID" />
+          <ScalarProperty Name="dev_type" ColumnName="dev_type" />
+          <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_devices">
+      <EntityTypeMapping TypeName="OthaimITModel.sys_devices">
+        <MappingFragment StoreEntitySet="sys_devices">
+          <ScalarProperty Name="Device_id" ColumnName="Device_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="model_id" ColumnName="model_id" />
+          <ScalarProperty Name="dev_Type_id" ColumnName="dev_Type_id" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+          <ScalarProperty Name="rec_date" ColumnName="rec_date" />
+          <ScalarProperty Name="opr_date" ColumnName="opr_date" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_doc_type">
+      <EntityTypeMapping TypeName="OthaimITModel.sys_doc_type">
+        <MappingFragment StoreEntitySet="sys_doc_type">
+          <ScalarProperty Name="doc_type_id" ColumnName="doc_type_id" />
+          <ScalarProperty Name="doc_type" ColumnName="doc_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_phone">
+      <EntityTypeMapping TypeName="OthaimITModel.sys_phone">
+        <MappingFragment StoreEntitySet="sys_phone">
+          <ScalarProperty Name="phone_id" ColumnName="phone_id" />
+          <ScalarProperty Name="simcard" ColumnName="simcard" />
+          <ScalarProperty Name="simCardSerial" ColumnName="simCardSerial" />
+          <ScalarProperty Name="LandLine" ColumnName="LandLine" />
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="Quota" ColumnName="Quota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_status">
+      <EntityTypeMapping TypeName="OthaimITModel.sys_status">
+        <MappingFragment StoreEntitySet="sys_status">
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_Toners">
+      <EntityTypeMapping TypeName="OthaimITModel.sys_Toners">
+        <MappingFragment StoreEntitySet="sys_Toners">
+          <ScalarProperty Name="Toner_ID" ColumnName="Toner_ID" />
+          <ScalarProperty Name="Toner_Name" ColumnName="Toner_Name" />
+          <ScalarProperty Name="Print_Avarage" ColumnName="Print_Avarage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_Type">
+      <EntityTypeMapping TypeName="OthaimITModel.sys_Type">
+        <MappingFragment StoreEntitySet="sys_Type">
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_Users">
+      <EntityTypeMapping TypeName="OthaimITModel.sys_Users">
+        <MappingFragment StoreEntitySet="sys_Users">
+          <ScalarProperty Name="Thechnical" ColumnName="Thechnical" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="JobCode" ColumnName="JobCode" />
+          <ScalarProperty Name="mustPassChange" ColumnName="mustPassChange" />
+          <ScalarProperty Name="accountDisabled" ColumnName="accountDisabled" />
+          <ScalarProperty Name="brWin" ColumnName="brWin" />
+          <ScalarProperty Name="brNewbtn" ColumnName="brNewbtn" />
+          <ScalarProperty Name="brEditbtn" ColumnName="brEditbtn" />
+          <ScalarProperty Name="brDeletebtn" ColumnName="brDeletebtn" />
+          <ScalarProperty Name="deptWin" ColumnName="deptWin" />
+          <ScalarProperty Name="deptNewbtn" ColumnName="deptNewbtn" />
+          <ScalarProperty Name="deptEditbtn" ColumnName="deptEditbtn" />
+          <ScalarProperty Name="deptDeletebtn" ColumnName="deptDeletebtn" />
+          <ScalarProperty Name="usrWin" ColumnName="usrWin" />
+          <ScalarProperty Name="usrNewbtn" ColumnName="usrNewbtn" />
+          <ScalarProperty Name="usrEditbtn" ColumnName="usrEditbtn" />
+          <ScalarProperty Name="usrDeletebtn" ColumnName="usrDeletebtn" />
+          <ScalarProperty Name="catWin" ColumnName="catWin" />
+          <ScalarProperty Name="catNewbtn" ColumnName="catNewbtn" />
+          <ScalarProperty Name="catEditbtn" ColumnName="catEditbtn" />
+          <ScalarProperty Name="catDeletebtn" ColumnName="catDeletebtn" />
+          <ScalarProperty Name="devTypeWin" ColumnName="devTypeWin" />
+          <ScalarProperty Name="devTypeNewbtn" ColumnName="devTypeNewbtn" />
+          <ScalarProperty Name="devTypeEditbtn" ColumnName="devTypeEditbtn" />
+          <ScalarProperty Name="devTypeDeletebtn" ColumnName="devTypeDeletebtn" />
+          <ScalarProperty Name="mdlWin" ColumnName="mdlWin" />
+          <ScalarProperty Name="mdlNewbtn" ColumnName="mdlNewbtn" />
+          <ScalarProperty Name="mdlEditbtn" ColumnName="mdlEditbtn" />
+          <ScalarProperty Name="mdlDeletebtn" ColumnName="mdlDeletebtn" />
+          <ScalarProperty Name="typeWin" ColumnName="typeWin" />
+          <ScalarProperty Name="typeNewbtn" ColumnName="typeNewbtn" />
+          <ScalarProperty Name="typeEditbtn" ColumnName="typeEditbtn" />
+          <ScalarProperty Name="typeDeletebtn" ColumnName="typeDeletebtn" />
+          <ScalarProperty Name="statWin" ColumnName="statWin" />
+          <ScalarProperty Name="statNewbtn" ColumnName="statNewbtn" />
+          <ScalarProperty Name="statEditbtn" ColumnName="statEditbtn" />
+          <ScalarProperty Name="statDeletebtn" ColumnName="statDeletebtn" />
+          <ScalarProperty Name="devWin" ColumnName="devWin" />
+          <ScalarProperty Name="devNewbtn" ColumnName="devNewbtn" />
+          <ScalarProperty Name="devEditbtn" ColumnName="devEditbtn" />
+          <ScalarProperty Name="devDeletebtn" ColumnName="devDeletebtn" />
+          <ScalarProperty Name="transoutWin" ColumnName="transoutWin" />
+          <ScalarProperty Name="transInWin" ColumnName="transInWin" />
+          <ScalarProperty Name="transReportWin" ColumnName="transReportWin" />
+          <ScalarProperty Name="transReportDeletebtn" ColumnName="transReportDeletebtn" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="feedBackMgr" ColumnName="feedBackMgr" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+          <ScalarProperty Name="PhoneWin" ColumnName="PhoneWin" />
+          <ScalarProperty Name="phoneNewbtn" ColumnName="phoneNewbtn" />
+          <ScalarProperty Name="phoneEditbtn" ColumnName="phoneEditbtn" />
+          <ScalarProperty Name="phoneDeletebtn" ColumnName="phoneDeletebtn" />
+          <ScalarProperty Name="TonerWin" ColumnName="TonerWin" />
+          <ScalarProperty Name="TonerReportWin" ColumnName="TonerReportWin" />
+          <ScalarProperty Name="DevCycleReportWin" ColumnName="DevCycleReportWin" />
+          <ScalarProperty Name="DevReportWin" ColumnName="DevReportWin" />
+          <ScalarProperty Name="MaintenanceWin" ColumnName="MaintenanceWin" />
+          <ScalarProperty Name="DepreciationWin" ColumnName="DepreciationWin" />
+          <ScalarProperty Name="LoginCount" ColumnName="LoginCount" />
+          <ScalarProperty Name="ContactBranchesWin" ColumnName="ContactBranchesWin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="OthaimITModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TonerReports">
+      <EntityTypeMapping TypeName="OthaimITModel.TonerReports">
+        <MappingFragment StoreEntitySet="TonerReports">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Branch_ID" ColumnName="Branch_ID" />
+          <ScalarProperty Name="Toner_ID" ColumnName="Toner_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="PrintCount" ColumnName="PrintCount" />
+          <ScalarProperty Name="First_Date" ColumnName="First_Date" />
+          <ScalarProperty Name="Last_Date" ColumnName="Last_Date" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransActions">
+      <EntityTypeMapping TypeName="OthaimITModel.TransActions">
+        <MappingFragment StoreEntitySet="TransActions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="IP_PC" ColumnName="IP_PC" />
+          <ScalarProperty Name="user_name_PC" ColumnName="user_name_PC" />
+          <ScalarProperty Name="host_name_PC" ColumnName="host_name-PC" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="delete_Device_root" FunctionName="OthaimITModel.Store.delete_Device_root">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OthaimITModel.delete_Device_root_Result">
+          <ScalarProperty Name="Device_id" ColumnName="Device_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="model_id" ColumnName="model_id" />
+          <ScalarProperty Name="dev_Type_id" ColumnName="dev_Type_id" />
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+          <ScalarProperty Name="rec_date" ColumnName="rec_date" />
+          <ScalarProperty Name="opr_date" ColumnName="opr_date" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Dispose" FunctionName="OthaimITModel.Store.Dispose">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OthaimITModel.Dispose_Result">
+          <ScalarProperty Name="HDR_ID" ColumnName="HDR_ID" />
+          <ScalarProperty Name="from_Site_Num" ColumnName="from_Site_Num" />
+          <ScalarProperty Name="from_Site_Name" ColumnName="from_Site_Name" />
+          <ScalarProperty Name="to_Site_Num" ColumnName="to_Site_Num" />
+          <ScalarProperty Name="to_Site_Name" ColumnName="to_Site_Name" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userCode" ColumnName="userCode" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+          <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="doc_type" ColumnName="doc_type" />
+          <ScalarProperty Name="model_Name" ColumnName="model_Name" />
+          <ScalarProperty Name="item_Code" ColumnName="item_Code" />
+          <ScalarProperty Name="device_name" ColumnName="device_name" />
+          <ScalarProperty Name="device_SN" ColumnName="device_SN" />
+          <ScalarProperty Name="note" ColumnName="note" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="OthaimITModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="OthaimITModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="OthaimITModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="OthaimITModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OthaimITModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="OthaimITModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OthaimITModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="OthaimITModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="OthaimITModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="Contact_Branches">
+      <EntityTypeMapping TypeName="OthaimITModel.Contact_Branches">
+        <MappingFragment StoreEntitySet="Contact_Branches">
+          <ScalarProperty Name="Phone_Num" ColumnName="Phone_Num" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

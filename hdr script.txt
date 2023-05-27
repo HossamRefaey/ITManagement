@@ -1,0 +1,35 @@
+GO
+/****** Object:  StoredProcedure [dbo].[Dispose]    Script Date: 23/10/2022 03:46:55 م ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[Dispose] @id int
+AS  
+select
+		STK_DTL.id,
+		from_site,
+		to_Site,
+		userName,
+		userCode,
+		Emp_Name,
+		Emp_Code,
+		date,
+		STK_DTL.note,
+		device_name,
+		device_SN,
+		[sys.dev_model].Name,
+		[sys.dev_model].Item_Code
+
+
+
+select dtl.* from STK_DTL dtl
+inner join [sys.devices] dev on dtl.device_id = dev.id
+where dtl.id=9
+
+
+
+where   STK_DTL.id = STK_HDR.id and STK_DTL.device_id=[sys.devices].id and STK_DTL.Device_Model_id=[sys.dev_model].id
+
+
+exec [Dispose] 2

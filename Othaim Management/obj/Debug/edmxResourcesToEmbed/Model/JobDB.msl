@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JobDBModelStoreContainer" CdmEntityContainer="JobDBEntities">
+    <EntitySetMapping Name="STK_DTL">
+      <EntityTypeMapping TypeName="JobDBModel.STK_DTL">
+        <MappingFragment StoreEntitySet="STK_DTL">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="num" ColumnName="num" />
+          <ScalarProperty Name="Dept_id" ColumnName="Dept_id" />
+          <ScalarProperty Name="doc_type" ColumnName="doc_type" />
+          <ScalarProperty Name="device_id" ColumnName="device_id" />
+          <ScalarProperty Name="Device_Model_id" ColumnName="Device_Model_id" />
+          <ScalarProperty Name="device_name" ColumnName="device_name" />
+          <ScalarProperty Name="device_SN" ColumnName="device_SN" />
+          <ScalarProperty Name="Type_id" ColumnName="Type_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="note" ColumnName="note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STK_HDR">
+      <EntityTypeMapping TypeName="JobDBModel.STK_HDR">
+        <MappingFragment StoreEntitySet="STK_HDR">
+          <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="From_Branch" ColumnName="From_Branch" />
+          <ScalarProperty Name="To_Branch" ColumnName="To_Branch" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="doc_type" ColumnName="doc_type" />
+          <ScalarProperty Name="num" ColumnName="num" />
+          <ScalarProperty Name="area_mgr_id" ColumnName="area_mgr_id" />
+          <ScalarProperty Name="From_Dept" ColumnName="From_Dept" />
+          <ScalarProperty Name="To_Dept" ColumnName="To_Dept" />
+          <ScalarProperty Name="note" ColumnName="note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_AreaMgrs">
+      <EntityTypeMapping TypeName="JobDBModel.sys_AreaMgrs">
+        <MappingFragment StoreEntitySet="sys_AreaMgrs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_branch">
+      <EntityTypeMapping TypeName="JobDBModel.sys_branch">
+        <MappingFragment StoreEntitySet="sys_branch">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="shrt_id" ColumnName="shrt_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="area_mgr_id" ColumnName="area_mgr_id" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_Category">
+      <EntityTypeMapping TypeName="JobDBModel.sys_Category">
+        <MappingFragment StoreEntitySet="sys_Category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="shrt_id" ColumnName="shrt_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_connection_type">
+      <EntityTypeMapping TypeName="JobDBModel.sys_connection_type">
+        <MappingFragment StoreEntitySet="sys_connection_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_Dept">
+      <EntityTypeMapping TypeName="JobDBModel.sys_Dept">
+        <MappingFragment StoreEntitySet="sys_Dept">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_dev_model">
+      <EntityTypeMapping TypeName="JobDBModel.sys_dev_model">
+        <MappingFragment StoreEntitySet="sys_dev_model">
+          <ScalarProperty Name="category_ID" ColumnName="category_ID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="devType_ID" ColumnName="devType_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_dev_type">
+      <EntityTypeMapping TypeName="JobDBModel.sys_dev_type">
+        <MappingFragment StoreEntitySet="sys_dev_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dev_type" ColumnName="dev_type" />
+          <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_devices">
+      <EntityTypeMapping TypeName="JobDBModel.sys_devices">
+        <MappingFragment StoreEntitySet="sys_devices">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="model_id" ColumnName="model_id" />
+          <ScalarProperty Name="Dev_Type_id" ColumnName="Dev_Type_id" />
+          <ScalarProperty Name="Dev_Category_id" ColumnName="Dev_Category_id" />
+          <ScalarProperty Name="cur_branch" ColumnName="cur_branch" />
+          <ScalarProperty Name="rec_date" ColumnName="rec_date" />
+          <ScalarProperty Name="opr_date" ColumnName="opr_date" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="Status_id" ColumnName="Status_id" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_doc_type">
+      <EntityTypeMapping TypeName="JobDBModel.sys_doc_type">
+        <MappingFragment StoreEntitySet="sys_doc_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="doc_type" ColumnName="doc_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_status">
+      <EntityTypeMapping TypeName="JobDBModel.sys_status">
+        <MappingFragment StoreEntitySet="sys_status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_Type">
+      <EntityTypeMapping TypeName="JobDBModel.sys_Type">
+        <MappingFragment StoreEntitySet="sys_Type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sys_Users">
+      <EntityTypeMapping TypeName="JobDBModel.sys_Users">
+        <MappingFragment StoreEntitySet="sys_Users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="JobCode" ColumnName="JobCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="JobDBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

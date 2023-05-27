@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ZKTeco_DBModelStoreContainer" CdmEntityContainer="ZKTeco_DBEntities">
+    <EntitySetMapping Name="USERINFO">
+      <EntityTypeMapping TypeName="ZKTeco_DBModel.USERINFO">
+        <MappingFragment StoreEntitySet="USERINFO">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="BADGENUMBER" ColumnName="BADGENUMBER" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="PAGER" ColumnName="PAGER" />
+          <ScalarProperty Name="BIRTHDAY" ColumnName="BIRTHDAY" />
+          <ScalarProperty Name="HIREDDAY" ColumnName="HIREDDAY" />
+          <ScalarProperty Name="STREET" ColumnName="STREET" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="OPHONE" ColumnName="OPHONE" />
+          <ScalarProperty Name="FPHONE" ColumnName="FPHONE" />
+          <ScalarProperty Name="VERIFICATIONMETHOD" ColumnName="VERIFICATIONMETHOD" />
+          <ScalarProperty Name="DEFAULTDEPTID" ColumnName="DEFAULTDEPTID" />
+          <ScalarProperty Name="SECURITYFLAGS" ColumnName="SECURITYFLAGS" />
+          <ScalarProperty Name="ATT" ColumnName="ATT" />
+          <ScalarProperty Name="INLATE" ColumnName="INLATE" />
+          <ScalarProperty Name="OUTEARLY" ColumnName="OUTEARLY" />
+          <ScalarProperty Name="OVERTIME" ColumnName="OVERTIME" />
+          <ScalarProperty Name="SEP" ColumnName="SEP" />
+          <ScalarProperty Name="HOLIDAY" ColumnName="HOLIDAY" />
+          <ScalarProperty Name="MINZU" ColumnName="MINZU" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="LUNCHDURATION" ColumnName="LUNCHDURATION" />
+          <ScalarProperty Name="MVerifyPass" ColumnName="MVerifyPass" />
+          <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="privilege" ColumnName="privilege" />
+          <ScalarProperty Name="InheritDeptSch" ColumnName="InheritDeptSch" />
+          <ScalarProperty Name="InheritDeptSchClass" ColumnName="InheritDeptSchClass" />
+          <ScalarProperty Name="AutoSchPlan" ColumnName="AutoSchPlan" />
+          <ScalarProperty Name="MinAutoSchInterval" ColumnName="MinAutoSchInterval" />
+          <ScalarProperty Name="RegisterOT" ColumnName="RegisterOT" />
+          <ScalarProperty Name="InheritDeptRule" ColumnName="InheritDeptRule" />
+          <ScalarProperty Name="EMPRIVILEGE" ColumnName="EMPRIVILEGE" />
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="FaceGroup" ColumnName="FaceGroup" />
+          <ScalarProperty Name="AccGroup" ColumnName="AccGroup" />
+          <ScalarProperty Name="UseAccGroupTZ" ColumnName="UseAccGroupTZ" />
+          <ScalarProperty Name="VerifyCode" ColumnName="VerifyCode" />
+          <ScalarProperty Name="Expires" ColumnName="Expires" />
+          <ScalarProperty Name="ValidCount" ColumnName="ValidCount" />
+          <ScalarProperty Name="ValidTimeBegin" ColumnName="ValidTimeBegin" />
+          <ScalarProperty Name="ValidTimeEnd" ColumnName="ValidTimeEnd" />
+          <ScalarProperty Name="TimeZone1" ColumnName="TimeZone1" />
+          <ScalarProperty Name="TimeZone2" ColumnName="TimeZone2" />
+          <ScalarProperty Name="TimeZone3" ColumnName="TimeZone3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
